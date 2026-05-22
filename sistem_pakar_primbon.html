@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pakar Primbon Jawa - Kecocokan Jodoh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+        }
+
+        /* ========== CARD UTAMA ========== */
+        .main-card {
+            background: white;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            margin-bottom: 25px;
+        }
+
+        /* ========== 2 KOLOM ========== */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        /* ========== KALENDER SECTION ========== */
+        .calendar-section {
+            background: linear-gradient(145deg, #1e2a3a 0%, #0f1a24 100%);
+            border-radius: 20px;
+            padding: 22px;
+            color: white;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title span {
+            background: rgba(255,255,255,0.15);
+            padding: 5px 10px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+        }
+
+        .date-input-group {
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+
+        .date-fields {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .date-fields input, .date-fields select {
+            flex: 1;
+            padding: 12px 14px;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: white;
+            outline: none;
+        }
+
+        .date-fields input:focus, .date-fields select:focus {
+            box-shadow: 0 0 0 2px #f0b27a;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #f0b27a 0%, #e67e22 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+        }
+
+        .hasil-weton-card {
+            background: rgba(0,0,0,0.3);
+            border-radius: 16px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .hasil-weton-card h4 {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .weton-besar {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #f0b27a;
+            margin: 12px 0;
+        }
+
+        .neptu-besar {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #e67e22;
+        }
+
+        .detail-weton {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .detail-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 30px;
+        }
+
+        .detail-item small {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            display: block;
+        }
+
+        .detail-item strong {
+            font-size: 1.1rem;
+        }
+
+        .btn-transfer {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2632 100%);
+            margin-top: 12px;
+            font-size: 0.85rem;
+        }
+
+        .btn-transfer-pria {
+            background: linear-gradient(135deg, #2980b9 0%, #1a5276 100%);
+        }
+
+        .btn-transfer-wanita {
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+        }
+
+        /* ========== TABEL NEPTU ========== */
+        .neptu-section {
+            background: #f8f9fc;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .neptu-section .section-title {
+            color: #4a2c6d;
+            border-bottom-color: #e0d5f0;
+        }
+
+        .neptu-tables {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .neptu-table {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .neptu-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .neptu-table th {
+            background: #764ba2;
+            color: white;
+            padding: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .neptu-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #f0eef3;
+            font-size: 0.9rem;
+        }
+
+        .neptu-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .neptu-table tr:hover {
+            background: #f8f4ff;
+        }
+
+        .neptu-value {
+            text-align: center;
+            font-weight: 600;
+            color: #764ba2;
+        }
+
+        /* ========== FORM KONSULTASI ========== */
+        .form-section {
+            background: #f8f9fc;
+            border-radius: 20px;
+            padding: 22px;
+            margin-top: 10px;
+        }
+
+        .form-section .section-title {
+            color: #4a2c6d;
+            border-bottom-color: #e0d5f0;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+        }
+
+        .form-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0eef3;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .input-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid #e8e8e8;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .input-group select:hover {
+            border-color: #764ba2;
+        }
+
+        .input-group select:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+        }
+
+        .btn-hitung {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-hitung:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(118, 75, 162, 0.3);
+        }
+
+        /* ========== HASIL ========== */
+        .hasil-section {
+            margin-top: 25px;
+            padding: 0;
+            display: none;
+        }
+
+        .hasil-section.show {
+            display: block;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hasil-card {
+            background: linear-gradient(135deg, #f5f0ff 0%, #ede4ff 100%);
+            border-radius: 20px;
+            padding: 25px;
+        }
+
+        .hasil-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hasil-header h3 {
+            font-size: 1.2rem;
+            color: #4a2c6d;
+        }
+
+        .hasil-weton-info {
+            background: white;
+            border-radius: 16px;
+            padding: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hasil-weton-info p {
+            font-size: 1rem;
+        }
+
+        .hasil-weton-info strong {
+            color: #764ba2;
+            font-size: 1.2rem;
+        }
+
+        .hasil-ramalan {
+            text-align: center;
+        }
+
+        .ramalan-judul {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: white;
+            border-radius: 50px;
+            display: inline-block;
+            width: auto;
+            padding: 10px 24px;
+        }
+
+        .ramalan-deskripsi {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: justify;
+            line-height: 1.6;
+            color: #444;
+            margin-top: 15px;
+        }
+
+        .skor-bar {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 16px;
+        }
+
+        .skor-bar p {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            background: #e8e8e8;
+            border-radius: 30px;
+            overflow: hidden;
+            height: 30px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: white;
+            border-radius: 30px;
+            transition: width 0.5s;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            margin-top: 30px;
+            font-size: 0.75rem;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 900px) {
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .neptu-tables {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            .main-card {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>📜 SISTEM PAKAR PRIMBON JAWA</h1>
+            <p>Konsultasi Kecocokan Jodoh Berdasarkan Weton • Metode Forward Chaining</p>
+        </div>
+
+        <div class="main-card">
+            <!-- 2 KOLOM: Kalender + Tabel Neptu -->
+            <div class="two-columns">
+                <!-- KALENDER KONVERSI -->
+                <div class="calendar-section">
+                    <div class="section-title">
+                        📅 Konversi Tanggal ke Weton
+                        <span>Masehi → Jawa</span>
+                    </div>
+                    <div class="date-input-group">
+                        <div class="date-fields">
+                            <input type="number" id="tgl" placeholder="Tanggal" min="1" max="31" value="17">
+                            <select id="bln">
+                                <option value="1">Januari</option>
+                                <option value="2">Februari</option>
+                                <option value="3">Maret</option>
+                                <option value="4">April</option>
+                                <option value="5">Mei</option>
+                                <option value="6">Juni</option>
+                                <option value="7">Juli</option>
+                                <option value="8">Agustus</option>
+                                <option value="9">September</option>
+                                <option value="10">Oktober</option>
+                                <option value="11">November</option>
+                                <option value="12">Desember</option>
+                            </select>
+                            <input type="number" id="thn" placeholder="Tahun" min="1900" max="2100" value="1945">
+                        </div>
+                        <button class="btn-primary" onclick="cariWeton()">🔍 Cari Weton & Neptu</button>
+                    </div>
+                    <div class="hasil-weton-card" id="hasil-weton-display">
+                        <h4>✨ HASIL KONVERSI ✨</h4>
+                        <div id="weton-text" style="font-size: 0.85rem; opacity: 0.8;">17/8/1945</div>
+                        <div class="weton-besar" id="weton-nama">-</div>
+                        <div class="neptu-besar" id="neptu-hasil">-</div>
+                        <div class="detail-weton" id="detail-info">
+                            <div class="detail-item"><small>HARI</small><strong id="detail-hari">-</strong></div>
+                            <div class="detail-item"><small>PASARAN</small><strong id="detail-pasaran">-</strong></div>
+                            <div class="detail-item"><small>NEPTU</small><strong id="detail-neptu">-</strong></div>
+                        </div>
+                        <button class="btn-primary btn-transfer btn-transfer-pria" onclick="transferKePria()">📌 Gunakan untuk Pria</button>
+                        <button class="btn-primary btn-transfer btn-transfer-wanita" onclick="transferKeWanita()">📌 Gunakan untuk Wanita</button>
+                    </div>
+                </div>
+
+                <!-- TABEL NEPTU -->
+                <div class="neptu-section">
+                    <div class="section-title">
+                        📊 Tabel Neptu
+                        <span>Referensi</span>
+                    </div>
+                    <div class="neptu-tables">
+                        <div class="neptu-table">
+                            <table>
+                                <thead><tr><th>Hari</th><th>Neptu</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Minggu</td><td class="neptu-value">5</td></tr>
+                                    <tr><td>Senin</td><td class="neptu-value">4</td></tr>
+                                    <tr><td>Selasa</td><td class="neptu-value">3</td></tr>
+                                    <tr><td>Rabu</td><td class="neptu-value">7</td></tr>
+                                    <tr><td>Kamis</td><td class="neptu-value">8</td></tr>
+                                    <tr><td>Jumat</td><td class="neptu-value">6</td></tr>
+                                    <tr><td>Sabtu</td><td class="neptu-value">9</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="neptu-table">
+                            <table>
+                                <thead><tr><th>Pasaran</th><th>Neptu</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Legi</td><td class="neptu-value">5</td></tr>
+                                    <tr><td>Pahing</td><td class="neptu-value">9</td></tr>
+                                    <tr><td>Pon</td><td class="neptu-value">7</td></tr>
+                                    <tr><td>Wage</td><td class="neptu-value">4</td></tr>
+                                    <tr><td>Kliwon</td><td class="neptu-value">8</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORM KONSULTASI -->
+            <div class="form-section">
+                <div class="section-title">
+                    🔮 Konsultasi Kecocokan Jodoh
+                    <span>Weton</span>
+                </div>
+                <div class="form-grid">
+                    <div class="form-card">
+                        <h4>👨 Pria (Laki-laki)</h4>
+                        <div class="input-group">
+                            <label>Hari Lahir</label>
+                            <select id="pria-hari">
+                                <option value="Minggu">Minggu (Neptu 5)</option>
+                                <option value="Senin">Senin (Neptu 4)</option>
+                                <option value="Selasa">Selasa (Neptu 3)</option>
+                                <option value="Rabu" selected>Rabu (Neptu 7)</option>
+                                <option value="Kamis">Kamis (Neptu 8)</option>
+                                <option value="Jumat">Jumat (Neptu 6)</option>
+                                <option value="Sabtu">Sabtu (Neptu 9)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Pasaran Lahir</label>
+                            <select id="pria-pasaran">
+                                <option value="Legi">Legi (Neptu 5)</option>
+                                <option value="Pahing">Pahing (Neptu 9)</option>
+                                <option value="Pon">Pon (Neptu 7)</option>
+                                <option value="Wage">Wage (Neptu 4)</option>
+                                <option value="Kliwon" selected>Kliwon (Neptu 8)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-card">
+                        <h4>👩 Wanita (Perempuan)</h4>
+                        <div class="input-group">
+                            <label>Hari Lahir</label>
+                            <select id="wanita-hari">
+                                <option value="Minggu">Minggu (Neptu 5)</option>
+                                <option value="Senin">Senin (Neptu 4)</option>
+                                <option value="Selasa">Selasa (Neptu 3)</option>
+                                <option value="Rabu">Rabu (Neptu 7)</option>
+                                <option value="Kamis">Kamis (Neptu 8)</option>
+                                <option value="Jumat" selected>Jumat (Neptu 6)</option>
+                                <option value="Sabtu">Sabtu (Neptu 9)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Pasaran Lahir</label>
+                            <select id="wanita-pasaran">
+                                <option value="Legi">Legi (Neptu 5)</option>
+                                <option value="Pahing">Pahing (Neptu 9)</option>
+                                <option value="Pon">Pon (Neptu 7)</option>
+                                <option value="Wage">Wage (Neptu 4)</option>
+                                <option value="Kliwon">Kliwon (Neptu 8)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-hitung" onclick="hitungKecocokan()">✨ Hitung Kecocokan ✨</button>
+            </div>
+
+            <!-- HASIL KONSULTASI -->
+            <div id="hasil" class="hasil-section"></div>
+        </div>
+
+        <div class="footer">
+            <p>⚠️ Sistem Pakar berbasis aturan Primbon Betaljemur Adammakna | Metode Forward Chaining | Untuk keperluan edukasi & pelestarian budaya</p>
+            <p>© 2026 - Tugas Sistem Pakar | Teknik Informatika</p>
+        </div>
+    </div>
+
+    <script>
+        // ==================== DATA NEPTU ====================
+        const neptuHari = {
+            'Minggu': 5, 'Senin': 4, 'Selasa': 3,
+            'Rabu': 7, 'Kamis': 8, 'Jumat': 6, 'Sabtu': 9
+        };
+        
+        const neptuPasaran = {
+            'Legi': 5, 'Pahing': 9, 'Pon': 7, 'Wage': 4, 'Kliwon': 8
+        };
+        
+        const hariList = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+        const pasaranList = ['Legi', 'Pahing', 'Pon', 'Wage', 'Kliwon'];
+        
+        // ==================== KONVERSI TANGGAL KE WETON ====================
+        function getWetonFromDate(tanggal, bulan, tahun) {
+            const targetDate = new Date(tahun, bulan - 1, tanggal);
+            const baseDate = new Date(1900, 0, 1);
+            const diffDays = Math.floor((targetDate - baseDate) / (1000 * 60 * 60 * 24));
+            
+            // 1 Jan 1900 = Senin (index 1) Pahing (index 1)
+            const hariIndex = (1 + diffDays) % 7;
+            const pasaranIndex = (1 + diffDays) % 5;
+            
+            const hari = hariList[hariIndex];
+            const pasaran = pasaranList[pasaranIndex];
+            const neptuTotal = neptuHari[hari] + neptuPasaran[pasaran];
+            
+            return { hari, pasaran, neptu: neptuTotal, weton: `${hari} ${pasaran}` };
+        }
+        
+        function cariWeton() {
+            const tgl = parseInt(document.getElementById('tgl').value);
+            const bln = parseInt(document.getElementById('bln').value);
+            const thn = parseInt(document.getElementById('thn').value);
+            
+            if (tgl < 1 || tgl > 31) {
+                alert('Tanggal tidak valid! Masukkan 1-31');
+                return;
+            }
+            
+            const result = getWetonFromDate(tgl, bln, thn);
+            
+            document.getElementById('weton-text').innerHTML = `📅 ${tgl}/${bln}/${thn}`;
+            document.getElementById('weton-nama').innerHTML = result.weton;
+            document.getElementById('neptu-hasil').innerHTML = result.neptu;
+            document.getElementById('detail-hari').innerHTML = result.hari;
+            document.getElementById('detail-pasaran').innerHTML = result.pasaran;
+            document.getElementById('detail-neptu').innerHTML = result.neptu;
+            
+            window.lastWetonResult = result;
+        }
+        
+        function transferKePria() {
+            if (window.lastWetonResult) {
+                document.getElementById('pria-hari').value = window.lastWetonResult.hari;
+                document.getElementById('pria-pasaran').value = window.lastWetonResult.pasaran;
+                hitungKecocokan();
+            } else {
+                alert('Silakan cari weton terlebih dahulu!');
+            }
+        }
+        
+        function transferKeWanita() {
+            if (window.lastWetonResult) {
+                document.getElementById('wanita-hari').value = window.lastWetonResult.hari;
+                document.getElementById('wanita-pasaran').value = window.lastWetonResult.pasaran;
+                hitungKecocokan();
+            } else {
+                alert('Silakan cari weton terlebih dahulu!');
+            }
+        }
+        
+        // ==================== KONSULTASI ====================
+        function hitungNeptu(hari, pasaran) {
+            return neptuHari[hari] + neptuPasaran[pasaran];
+        }
+        
+        function hitungSisaKecocokan(neptuPria, neptuWanita) {
+            let total = neptuPria + neptuWanita;
+            if(total > 10) return total % 10;
+            return total;
+        }
+        
+        const hasilRamalan = {
+            1: { nama: "Wasesa Segara", deskripsi: "👑 Pasangan ini memiliki watak yang mulia, rendah hati, dan berwibawa. Mereka akan mudah mendapatkan kekayaan dan kemakmuran. Kehidupan rumah tangga akan harmonis dan dihormati masyarakat.", skor: 95 },
+            2: { nama: "Tunggak Semi", deskripsi: "✅ Pasangan ini akan mudah mencari rezeki dan sandang pangan. Mereka termasuk tipe yang rajin dan ulet. Meskipun tidak kaya raya, kehidupan mereka akan tercukupi dan berkah.", skor: 85 },
+            3: { nama: "Satriya Wibawa", deskripsi: "✨ Pasangan ini akan mendapatkan keluhuran, kemuliaan, dan kemakmuran. Mereka cocok menjadi pemimpin. Keturunannya akan menjadi orang-orang terpandang.", skor: 90 },
+            4: { nama: "Sumur Sinobo", deskripsi: "🏠 Pasangan ini akan banyak mendapatkan rezeki dan kebahagiaan. Seperti sumur yang tak pernah kering, rezeki mereka akan terus mengalir. Perlu menjaga komunikasi.", skor: 80 },
+            5: { nama: "Satriya Wirang", deskripsi: "⚠️ Pasangan ini akan sering mengalami kesusahan. Saran: Perbanyak ibadah, sedekah, dan mohon restu orang tua. Hindari menikah di bulan Sura.", skor: 40 },
+            6: { nama: "Bumi Kapetak", deskripsi: "🌍 Pasangan ini akan kokoh seperti bumi. Sabar dan tabah menghadapi masalah. Rumah tangga kuat dan tidak mudah goyah.", skor: 75 },
+            7: { nama: "Lebur Ketinggang", deskripsi: "⚠️ Pasangan ini akan sering mengalami pertengkaran. Usaha bersama mudah hancur. Disarankan melakukan ritual ruwatan.", skor: 30 },
+            8: { nama: "Padu", deskripsi: "🔥 Pasangan ini akan sering mengalami pertengkaran hebat, bahkan bisa sampai pisah ranjang. Saran: Konsultasi dengan sesepuh.", skor: 25 },
+            9: { nama: "Pegat", deskripsi: "💔 PEGAT artinya bercerai. Pasangan ini sangat rentan bercerai. Primbon menyarankan TIDAK MELANJUTKAN ke pernikahan.", skor: 10 },
+            0: { nama: "Langgeng", deskripsi: "🏆 SEMPURNA! Pasangan ini akan langgeng, harmonis, dan bahagia sampai tua. Rumah tangga penuh cinta kasih, rezeki melimpah.", skor: 100 }
+        };
+        
+        function hitungKecocokan() {
+            const priaHari = document.getElementById('pria-hari').value;
+            const priaPasaran = document.getElementById('pria-pasaran').value;
+            const wanitaHari = document.getElementById('wanita-hari').value;
+            const wanitaPasaran = document.getElementById('wanita-pasaran').value;
+            
+            const neptuPria = hitungNeptu(priaHari, priaPasaran);
+            const neptuWanita = hitungNeptu(wanitaHari, wanitaPasaran);
+            const sisa = hitungSisaKecocokan(neptuPria, neptuWanita);
+            const ramalan = hasilRamalan[sisa];
+            
+            let warna = ramalan.skor >= 80 ? '#4CAF50' : (ramalan.skor >= 60 ? '#FF9800' : '#f44336');
+            
+            const html = `
+                <div class="hasil-card">
+                    <div class="hasil-header">
+                        <h3>📋 HASIL KONSULTASI</h3>
+                    </div>
+                    <div class="hasil-weton-info">
+                        <p>👨 <strong>${priaHari} ${priaPasaran}</strong> (Neptu ${neptuPria}) &nbsp; ❤️ &nbsp; 👩 <strong>${wanitaHari} ${wanitaPasaran}</strong> (Neptu ${neptuWanita})</p>
+                        <p style="margin-top: 8px;">Total Neptu: <strong>${neptuPria + neptuWanita}</strong> | Sisa: <strong>${sisa}</strong></p>
+                    </div>
+                    <div class="hasil-ramalan">
+                        <div class="ramalan-judul" style="border: 2px solid ${warna}; color: ${warna}">
+                            ${ramalan.nama}
+                        </div>
+                        <div class="ramalan-deskripsi">
+                            ${ramalan.deskripsi}
+                        </div>
+                        <div class="skor-bar">
+                            <p>🎯 Tingkat Kecocokan</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${ramalan.skor}%; background: ${warna}">
+                                    ${ramalan.skor}%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            const hasilDiv = document.getElementById('hasil');
+            hasilDiv.innerHTML = html;
+            hasilDiv.classList.add('show');
+            hasilDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // INIT
+        window.onload = function() {
+            document.getElementById('tgl').value = 17;
+            document.getElementById('bln').value = 8;
+            document.getElementById('thn').value = 1945;
+            cariWeton();
+            hitungKecocokan();
+        };
+    </script>
+</body>
+</html>
