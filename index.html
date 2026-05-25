@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sistem Pakar Primbon Jawa - Kecocokan Jodoh | IKIP PGRI Bojonegoro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-badge">IKIP PGRI BOJONEGORO</div>
+            <h1>Sistem Pakar Primbon Jawa</h1>
+            <p>Analisis Kecocokan Jodoh Berdasarkan Weton (Forward Chaining)</p>
+        </header>
+
+        <main class="main-layout">
+            <section class="card-panel dark-panel">
+                <div class="panel-header">
+                    <h2>📅 Konversi Masehi ke Weton</h2>
+                    <span class="badge yellow">Real-time</span>
+                </div>
+                
+                <div class="converter-box">
+                    <div class="input-row">
+                        <div class="input-field">
+                            <label for="tgl">Tanggal</label>
+                            <input type="number" id="tgl" min="1" max="31" value="17">
+                        </div>
+                        <div class="input-field">
+                            <label for="bln">Bulan</label>
+                            <select id="bln">
+                                <option value="1">Januari</option><option value="2">Februari</option><option value="3">Maret</option>
+                                <option value="4">April</option><option value="5">Mei</option><option value="6">Juni</option>
+                                <option value="7">Juli</option><option value="8">Agustus</option><option value="9">September</option>
+                                <option value="10">Oktober</option><option value="11">November</option><option value="12">Desember</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label for="thn">Tahun</label>
+                            <input type="number" id="thn" min="1900" max="2100" value="1945">
+                        </div>
+                    </div>
+                    <button class="btn btn-gold" onclick="cariWeton()">✨ Hitung Weton</button>
+                </div>
+
+                <div class="display-weton-result" id="hasil-weton-display">
+                    <span class="label-mini">HASIL KONVERSI</span>
+                    <p class="date-output" id="weton-text">📅 17/8/1945</p>
+                    <h3 class="weton-main-title" id="weton-nama">-</h3>
+                    
+                    <div class="weton-grid-stats">
+                        <div class="stat-box">
+                            <span class="stat-lbl">Hari</span>
+                            <strong id="detail-hari">-</strong>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-lbl">Pasaran</span>
+                            <strong id="detail-pasaran">-</strong>
+                        </div>
+                        <div class="stat-box highlighted">
+                            <span class="stat-lbl">Neptu</span>
+                            <strong id="neptu-hasil">-</strong>
+                        </div>
+                    </div>
+
+                    <div class="action-transfer-group">
+                        <button class="btn btn-outline" onclick="transferKePria()">👨 Set Pria</button>
+                        <button class="btn btn-outline" onclick="transferKeWanita()">👩 Set Wanita</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card-panel">
+                <div class="panel-header">
+                    <h2>📖 Panduan Nilai Neptu</h2>
+                </div>
+                <div class="tables-flex">
+                    <div class="table-responsive">
+                        <table>
+                            <thead><tr><th>🌞 Hari</th><th>Nilai</th></tr></thead>
+                            <tbody>
+                                <tr><td>Minggu</td><td><strong>5</strong></td></tr>
+                                <tr><td>Senin</td><td><strong>4</strong></td></tr>
+                                <tr><td>Selasa</td><td><strong>3</strong></td></tr>
+                                <tr><td>Rabu</td><td><strong>7</strong></td></tr>
+                                <tr><td>Kamis</td><td><strong>8</strong></td></tr>
+                                <tr><td>Jumat</td><td><strong>6</strong></td></tr>
+                                <tr><td>Sabtu</td><td><strong>9</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead><tr><th>🌙 Pasaran</th><th>Nilai</th></tr></thead>
+                            <tbody>
+                                <tr><td>Legi</td><td><strong>5</strong></td></tr>
+                                <tr><td>Pahing</td><td><strong>9</strong></td></tr>
+                                <tr><td>Pon</td><td><strong>7</strong></td></tr>
+                                <tr><td>Wage</td><td><strong>4</strong></td></tr>
+                                <tr><td>Kliwon</td><td><strong>8</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card-panel full-width">
+                <div class="panel-header text-center">
+                    <h2>💘 Input Data Pasangan Jodoh</h2>
+                </div>
+                
+                <div class="matchmaking-grid">
+                    <div class="gender-card male">
+                        <div class="gender-header">👨 Weton Laki-laki</div>
+                        <div class="form-group">
+                            <label>Hari Lahir</label>
+                            <select id="pria-hari">
+                                <option value="Minggu">Minggu (5)</option><option value="Senin">Senin (4)</option>
+                                <option value="Selasa">Selasa (3)</option><option value="Rabu" selected>Rabu (7)</option>
+                                <option value="Kamis">Kamis (8)</option><option value="Jumat">Jumat (6)</option>
+                                <option value="Sabtu">Sabtu (9)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Pasaran Lahir</label>
+                            <select id="pria-pasaran">
+                                <option value="Legi">Legi (5)</option><option value="Pahing">Pahing (9)</option>
+                                <option value="Pon">Pon (7)</option><option value="Wage">Wage (4)</option>
+                                <option value="Kliwon" selected>Kliwon (8)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="gender-card female">
+                        <div class="gender-header">👩 Weton Perempuan</div>
+                        <div class="form-group">
+                            <label>Hari Lahir</label>
+                            <select id="wanita-hari">
+                                <option value="Minggu">Minggu (5)</option><option value="Senin">Senin (4)</option>
+                                <option value="Selasa">Selasa (3)</option><option value="Rabu">Rabu (7)</option>
+                                <option value="Kamis">Kamis (8)</option><option value="Jumat" selected>Jumat (6)</option>
+                                <option value="Sabtu">Sabtu (9)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Pasaran Lahir</label>
+                            <select id="wanita-pasaran">
+                                <option value="Legi">Legi (5)</option><option value="Pahing">Pahing (9)</option>
+                                <option value="Pon">Pon (7)</option><option value="Wage">Wage (4)</option>
+                                <option value="Kliwon">Kliwon (8)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary-match" onclick="hitungKecocokan()">✨ Analisis Kecocokan Jodoh ✨</button>
+            </section>
+        </main>
+
+        <div id="hasil" class="result-container"></div>
+
+        <footer class="footer">
+            <p><strong>SISTEM PAKAR PRIMBON JAWA</strong> — <span class="uni-name">IKIP PGRI BOJONEGORO</span></p>
+            <p>Pendidikan Teknologi Informasi | Dosen Pengampu: Muh Rinov Cuhanazriansyah, S.T., M.Pd. T.</p>
+            <p class="copyright">© 2026 All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
