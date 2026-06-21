@@ -39,67 +39,106 @@ const neptuPasaran = {
  * Tabel Data Kesimpulan (Hasil Perhitungan Neptu)
  * Berdasarkan primbon standar dengan pembagi 10 (atau sisa bagi total neptu)
  * Kode: K01-K10
+ * 
+ * Setiap hasil dilengkapi dengan:
+ * - nama: Nama ramalan
+ * - deskripsi: Penjelasan lengkap tentang karakter dan nasib pasangan
+ * - skor: Tingkat kecocokan (0-100)
+ * - solusi: Saran/tindakan yang dianjurkan
+ * - karakter: Sifat-sifat yang dimiliki pasangan
+ * - kelebihan: Kelebihan hubungan
+ * - kekurangan: Kekurangan yang perlu diwaspadai
  */
 const hasilRamalan = {
     1: { 
         nama: "Wasesa Segara",           // K01
-        deskripsi: "👑 Berhati mulia, mudah mendapat kekayaan & wibawa. Kehidupan harmonis serta dihormati sekelilingnya.",
+        deskripsi: "👑 Pasangan ini memiliki hati yang mulia dan budi pekerti yang luhur. Mereka akan mudah mendapatkan kekayaan, wibawa, dan penghormatan dari masyarakat sekitarnya. Kehidupan rumah tangga akan dipenuhi dengan harmoni dan kebahagiaan.",
         skor: 95,
-        solusi: "-"
+        solusi: "Pertahankan sikap rendah hati dan teruslah berbuat baik kepada sesama. Jangan pernah sombong meskipun telah mencapai kesuksesan.",
+        karakter: "Mulia, dermawan, berwibawa, bijaksana, dan rendah hati",
+        kelebihan: "Mudah mendapatkan rezeki, dihormati banyak orang, hubungan harmonis, dan beruntung dalam segala usaha",
+        kekurangan: "Cenderung terlalu percaya diri dan mudah dimanfaatkan orang lain"
     },
     2: { 
         nama: "Tunggak Semi",            // K02
-        deskripsi: "✅ Rajin, ulet, rezeki selalu berlimpah. Pasangan yang tipe pekerja keras dan relatif mudah mencapai kesuksesan finansial.",
+        deskripsi: "✅ Pasangan ini adalah tipe pekerja keras dan pantang menyerah. Mereka memiliki semangat juang yang tinggi dalam meraih kesuksesan. Rezeki selalu mengalir deras dan mereka termasuk orang yang mudah mencapai kesuksesan finansial. Keuletan dan ketekunan menjadi kunci keberhasilan mereka.",
         skor: 85,
-        solusi: "-"
+        solusi: "Jaga keseimbangan antara bekerja dan beristirahat. Luangkan waktu untuk keluarga dan jangan terlalu fokus pada materi saja.",
+        karakter: "Ulet, pekerja keras, tangguh, pantang menyerah, dan ambisius",
+        kelebihan: "Rezeki berlimpah, karir cemerlang, mental baja, dan disiplin tinggi",
+        kekurangan: "Cenderung workaholic dan kurang memperhatikan kesehatan"
     },
     3: { 
         nama: "Satriya Wibawa",          // K03
-        deskripsi: "✨ Selalu mendapat kemuliaan, keluhuran, dan derajat kedudukan yang tinggi. Sangat cocok dalam memimpin mahligai keluarga.",
+        deskripsi: "✨ Pasangan ini ditakdirkan untuk mendapatkan kemuliaan dan keluhuran derajat. Mereka akan memiliki kedudukan yang tinggi dan dihormati oleh banyak orang. Sangat cocok dalam memimpin mahligai keluarga karena memiliki jiwa kepemimpinan yang kuat. Kehidupan mereka akan dipenuhi dengan kehormatan dan pengakuan.",
         skor: 90,
-        solusi: "-"
+        solusi: "Gunakan kedudukan dan pengaruh yang dimiliki untuk membantu orang lain. Jangan lupa untuk selalu bersikap adil dalam setiap keputusan.",
+        karakter: "Berwibawa, pemimpin alami, bijaksana, disegani, dan tegas",
+        kelebihan: "Mudah mendapat kepercayaan orang, karir cemerlang, dihormati, dan sukses dalam kepemimpinan",
+        kekurangan: "Cenderung otoriter dan kurang mendengarkan saran orang lain"
     },
     4: { 
         nama: "Sumur Sinobo",            // K04
-        deskripsi: "🏠 Rezeki berlimpah bagaikan sumur yang tak pernah kering. Hidup penuh kebajikan, bahagia, dan berkecukupan.",
+        deskripsi: "🏠 Rezeki pasangan ini bagaikan sumur yang tak pernah kering. Mereka akan selalu hidup dalam kecukupan dan kebahagiaan. Kehidupan mereka penuh dengan kebajikan dan berkah yang melimpah. Pasangan ini memiliki kemampuan untuk menarik kekayaan dan keberuntungan dari berbagai arah.",
         skor: 80,
-        solusi: "-"
+        solusi: "Syukuri setiap nikmat yang diberikan. Jangan lupa untuk berbagi dengan orang yang membutuhkan karena rezeki akan semakin bertambah jika dibagikan.",
+        karakter: "Dermawan, murah hati, bahagia, syukur, dan ramah",
+        kelebihan: "Rezeki berlimpah, banyak teman, hidup bahagia, dan dikelilingi orang baik",
+        kekurangan: "Cenderung boros dan kurang pandai mengelola keuangan"
     },
     5: { 
         nama: "Satriya Wirang",          // K05
-        deskripsi: "⚠️ Kerap kali mengalami kesusahan atau rintangan sosial. Disarankan memperbanyak sedekah & rajin memohon doa restu orang tua.",
+        deskripsi: "⚠️ Pasangan ini sering kali mengalami kesusahan dan rintangan dalam kehidupan sosialnya. Mereka mungkin akan menghadapi berbagai cobaan dan hambatan yang menguji kesabaran. Disarankan untuk memperbanyak sedekah dan rajin memohon doa restu orang tua agar mendapat perlindungan dan kelancaran.",
         skor: 40,
-        solusi: "Memperbanyak sedekah dan rajin berdoa memohon restu orang tua"
+        solusi: "Perbanyak sedekah, rajin berdoa memohon restu orang tua, dan selalu introspeksi diri. Kurangi sifat angkuh dan egois. Perbanyak ibadah dan mendekatkan diri kepada Tuhan.",
+        karakter: "Pemberani, ulet, tetapi sering mendapat tantangan dan hambatan dalam hidup",
+        kelebihan: "Memiliki ketahanan mental yang kuat dan tidak mudah menyerah",
+        kekurangan: "Cenderung mendapat musuh, sering difitnah, dan mengalami kesulitan dalam hubungan sosial"
     },
     6: { 
         nama: "Bumi Kapetak",            // K06
-        deskripsi: "🌍 Kekuatan mental bagaikan bumi, sangat sabar & tabah menghadapi dinamika serta prahara dalam berumah tangga.",
+        deskripsi: "🌍 Pasangan ini memiliki kekuatan mental yang bagaikan bumi yang kokoh. Mereka sangat sabar dan tabah dalam menghadapi berbagai dinamika dan prahara dalam berumah tangga. Keteguhan hati dan kesabaran menjadi senjata utama mereka dalam menghadapi setiap badai kehidupan.",
         skor: 75,
-        solusi: "-"
+        solusi: "Pertahankan kesabaran dan keteguhan hati. Jadilah fondasi yang kuat bagi keluarga. Perkuat komunikasi agar tetap harmonis.",
+        karakter: "Sabar, tabah, kokoh, dapat diandalkan, dan kuat mentalnya",
+        kelebihan: "Tahan banting, dapat menjadi sandaran, dan selalu tenang dalam menghadapi masalah",
+        kekurangan: "Cenderung pasif dan kurang berinisiatif dalam mengambil keputusan"
     },
     7: { 
         nama: "Lebur Ketinggang",        // K07
-        deskripsi: "⚠️ Berpotensi sering cekcok, usaha yang dirintis bersama rentan runtuh. Perlu komunikasi intensif dan saling mengalah.",
+        deskripsi: "⚠️ Pasangan ini berpotensi sering mengalami cekcok dan pertengkaran. Usaha yang dirintis bersama rentan mengalami kegagalan dan keruntuhan. Diperlukan komunikasi yang intensif dan sikap saling mengalah untuk menjaga keharmonisan rumah tangga.",
         skor: 30,
-        solusi: "Meningkatkan komunikasi intensif dan saling mengalah"
+        solusi: "Tingkatkan komunikasi intensif, selalu saling mengalah, dan jangan biarkan ego menguasai. Segera selesaikan setiap konflik dengan kepala dingin. Jangan membawa masalah keesokan harinya.",
+        karakter: "Emosional, mudah tersulut, egois, dan keras kepala",
+        kelebihan: "Memiliki semangat yang besar jika sesuatu sesuai dengan keinginannya",
+        kekurangan: "Sering bertengkar, usaha mudah hancur, dan hubungan tidak harmonis"
     },
     8: { 
         nama: "Padu",                    // K08
-        deskripsi: "🔥 Sering terjadi pertengkaran hebat, rawan memicu pisah ranjang. Harus ekstra hati-hati dalam meredam ego membina rumah tangga.",
+        deskripsi: "🔥 Pasangan ini sering kali terlibat dalam pertengkaran hebat yang berpotensi memicu perpisahan. Perselisihan yang terjadi bisa sangat parah hingga mengancam keutuhan rumah tangga. Harus ekstra hati-hati dalam meredam ego dan menjaga komunikasi agar tidak terjadi hal-hal yang tidak diinginkan.",
         skor: 25,
-        solusi: "Menghindari konflik dan belajar mengendalikan ego"
+        solusi: "Hindari konflik yang tidak perlu, pelajari teknik mengendalikan ego, dan jangan pernah membawa emosi saat berdiskusi. Segera cari bantuan konseling jika pertengkaran sudah terlalu sering terjadi.",
+        karakter: "Mudah marah, keras kepala, kurang sabar, dan sulit mengendalikan emosi",
+        kelebihan: "Memiliki pendirian yang teguh dan tidak mudah terpengaruh",
+        kekurangan: "Sering konflik, rentan perceraian, dan emosi yang tidak stabil"
     },
     9: { 
         nama: "Pegat",                   // K09
-        deskripsi: "💔 Tradisi mencatat makna PEGAT = perceraian atau perpisahan berat. Sangat tidak disarankan menurut perhitungan primbon.",
+        deskripsi: "💔 Menurut tradisi primbon, PEGAT memiliki makna yang sangat buruk yaitu perceraian atau perpisahan yang berat. Pasangan ini sangat tidak disarankan untuk melanjutkan hubungan ke jenjang pernikahan karena diprediksi akan berakhir dengan perpisahan yang menyakitkan.",
         skor: 10,
-        solusi: "Disarankan untuk tidak melanjutkan ke jenjang pernikahan"
+        solusi: "Sangat tidak disarankan untuk melanjutkan ke jenjang pernikahan. Jika tetap ingin melanjutkan, lakukan ritual ruwatan dan konsultasi dengan ahli spiritual. Kedua pihak harus benar-benar siap menghadapi segala konsekuensi.",
+        karakter: "Cenderung saling bertolak belakang dan sulit menemukan titik temu",
+        kelebihan: "Masing-masing memiliki kelebihan yang mungkin bisa melengkapi",
+        kekurangan: "Sangat rentan terhadap perceraian, perpisahan, dan konflik berkepanjangan"
     },
     0: { 
         nama: "Langgeng Sempurna",       // K10 (sisa 0)
-        deskripsi: "🏆 SEMPURNA! Tipe keharmonisan abadi, jalinan cinta diprediksi langgeng aman sentosa hingga maut memisahkan.",
+        deskripsi: "🏆 INILAH KOMBINASI SEMPURNA! Pasangan ini diprediksi akan memiliki keharmonisan yang abadi dan jalinan cinta yang langgeng hingga ajal memisahkan. Hubungan mereka akan dipenuhi dengan cinta, pengertian, dan kebahagiaan yang tak terhingga. Ini adalah jodoh yang sangat ideal menurut perhitungan primbon Jawa.",
         skor: 100,
-        solusi: "-"
+        solusi: "Jaga selalu komunikasi yang baik dan jangan pernah lupa untuk saling menghargai. Pertahankan keharmonisan dengan terus menumbuhkan rasa cinta dan kasih sayang setiap hari.",
+        karakter: "Saling mencintai, harmonis, saling memahami, setia, dan dewasa",
+        kelebihan: "Hubungan langgeng, dipenuhi cinta, tidak pernah bosan, dan saling melengkapi",
+        kekurangan: "Tidak ada kekurangan yang berarti, hanya perlu menjaga agar tidak terjadi kebosanan"
     }
 };
 
@@ -353,15 +392,47 @@ function tampilkanHasilDiagnosis(data) {
         `;
     }
     
-    // Tambahan solusi jika ada
-    let deskripsiTambahan = ramalan.deskripsi;
+    // Informasi lengkap ramalan
+    let deskripsiTambahan = `
+        <p>${ramalan.deskripsi}</p>
+        <br>
+        <div style="background: rgba(15,23,42,0.4); padding: 16px; border-radius: 12px; margin: 12px 0;">
+            <strong>🌟 Karakter Utama:</strong><br>
+            <span style="color: #fcd34d;">${ramalan.karakter || 'Tidak tersedia'}</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0;">
+            <div style="background: rgba(34,197,94,0.1); padding: 12px; border-radius: 12px; border-left: 3px solid #22c55e;">
+                <strong style="color: #86efac;">✅ Kelebihan:</strong><br>
+                <span style="font-size: 0.9rem;">${ramalan.kelebihan || 'Tidak tersedia'}</span>
+            </div>
+            <div style="background: rgba(239,68,68,0.1); padding: 12px; border-radius: 12px; border-left: 3px solid #ef4444;">
+                <strong style="color: #fca5a5;">⚠️ Kekurangan:</strong><br>
+                <span style="font-size: 0.9rem;">${ramalan.kekurangan || 'Tidak tersedia'}</span>
+            </div>
+        </div>
+    `;
+    
     if (ramalan.solusi && ramalan.solusi !== "-") {
-        deskripsiTambahan += `<br><br><strong>💡 Solusi yang disarankan:</strong> ${ramalan.solusi}`;
+        deskripsiTambahan += `
+            <div style="background: rgba(245,158,11,0.1); padding: 16px; border-radius: 12px; margin-top: 12px; border: 1px solid rgba(245,158,11,0.2);">
+                <strong style="color: #fcd34d;">💡 Solusi yang Disarankan:</strong><br>
+                ${ramalan.solusi}
+            </div>
+        `;
     }
+    
     if (isPantangan) {
-        deskripsiTambahan += `<br><br><strong style="color:#b91c1c;">✘ STATUS PANTANGAN AKTIF: PERNIKAHAN TIDAK DIANJURKAN.</strong>`;
+        deskripsiTambahan += `
+            <div style="background: rgba(239,68,68,0.15); padding: 16px; border-radius: 12px; margin-top: 12px; border: 2px solid #ef4444;">
+                <strong style="color: #ef4444;">✘ STATUS PANTANGAN AKTIF: PERNIKAHAN TIDAK DIANJURKAN.</strong>
+            </div>
+        `;
     } else if (isTotal25Aman) {
-        deskripsiTambahan += `<br><br><strong style="color:#166534;">✓ STATUS AMAN: KOMBINASI TIDAK TERMASUK LARANGAN.</strong>`;
+        deskripsiTambahan += `
+            <div style="background: rgba(34,197,94,0.15); padding: 16px; border-radius: 12px; margin-top: 12px; border: 2px solid #22c55e;">
+                <strong style="color: #22c55e;">✓ STATUS AMAN: KOMBINASI TIDAK TERMASUK LARANGAN.</strong>
+            </div>
+        `;
     }
     
     // Generate HTML hasil
