@@ -4,22 +4,16 @@
     --dark-slate: #0f172a;
     --card-glass: rgba(30, 41, 59, 0.7);
     --card-border: rgba(255, 255, 255, 0.08);
-    
-    /* Luxury Gold Palette */
     --gold: #f59e0b;
     --gold-hover: #d97706;
     --gold-glow: rgba(245, 158, 11, 0.4);
     --gold-light: rgba(254, 243, 199, 0.1);
-    
     --text-primary: #f8fafc;
     --text-muted: #94a3b8;
-    
-    /* Genders color with neon vibe */
     --male-color: #38bdf8;
     --male-bg: rgba(56, 189, 248, 0.06);
     --female-color: #f472b6;
     --female-bg: rgba(244, 114, 182, 0.06);
-    
     --radius-lg: 24px;
     --radius-md: 16px;
     --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -49,10 +43,10 @@ body {
     margin: 0 auto;
 }
 
-/* HEADER STYLE */
+/* HEADER */
 .header {
     text-align: center;
-    margin: 40px 0 48px;
+    margin: 40px 0 32px;
 }
 
 .logo-badge {
@@ -86,24 +80,54 @@ body {
     margin: 0 auto;
 }
 
-/* MAIN LAYOUT GRID */
-.main-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
+/* TAB NAVIGATION */
+.tab-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-bottom: 32px;
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: var(--radius-lg);
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-@media(min-width: 768px) {
-    .main-layout {
-        grid-template-columns: 1.2fr 0.8fr;
-    }
-    .full-width {
-        grid-column: span 2;
-    }
+.tab-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-/* CARDS COMMON (GLASSMORPHISM) */
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #0a0f1d;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+}
+
+.tab-content {
+    display: none;
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* CARDS */
 .card-panel {
     background: var(--card-glass);
     backdrop-filter: blur(16px);
@@ -113,11 +137,11 @@ body {
     box-shadow: var(--shadow-luxury);
     border: 1px solid var(--card-border);
     transition: var(--transition);
+    margin-bottom: 24px;
 }
 
 .card-panel:hover {
     border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
 }
 
 .panel-header {
@@ -125,6 +149,8 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .panel-header h2 {
@@ -147,7 +173,7 @@ body {
     border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
-/* INPUT FORM ELEMENTS */
+/* FORM ELEMENTS */
 .input-row {
     display: grid;
     grid-template-columns: 1fr;
@@ -189,7 +215,6 @@ body {
     transition: var(--transition);
 }
 
-/* Custom dropdown arrow for dark theme */
 select {
     appearance: none;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
@@ -224,10 +249,6 @@ select {
 
 .btn:hover {
     transform: translateY(-2px);
-}
-
-.btn:active {
-    transform: translateY(0);
 }
 
 .btn-gold {
@@ -273,7 +294,7 @@ select {
     transform: translateY(-3px);
 }
 
-/* WETON DISPLAY DISPLAY CARD */
+/* WETON DISPLAY */
 .display-weton-result {
     margin-top: 24px;
     background: rgba(15, 23, 42, 0.4);
@@ -348,7 +369,7 @@ select {
     gap: 12px;
 }
 
-/* TABLES STYLING */
+/* TABLES */
 .tables-flex {
     display: flex;
     flex-direction: column;
@@ -385,11 +406,7 @@ td {
     color: #e2e8f0;
 }
 
-tr:nth-child(even) {
-    background: rgba(255, 255, 255, 0.01);
-}
-
-/* MATCHMAKING FORM LAYOUT */
+/* MATCHMAKING */
 .matchmaking-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -443,7 +460,7 @@ tr:nth-child(even) {
     margin-bottom: 0;
 }
 
-/* RESULTS PANEL BOX */
+/* RESULTS */
 .result-container {
     margin-top: 32px;
     display: none;
@@ -502,10 +519,6 @@ tr:nth-child(even) {
     line-height: 1.7;
 }
 
-.ramalan-deskripsi p {
-    margin-bottom: 0;
-}
-
 .skor-container {
     margin-top: 24px;
 }
@@ -538,7 +551,7 @@ tr:nth-child(even) {
     transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* WARNING BANNERS */
+/* WARNING */
 .warning-banner {
     display: flex;
     gap: 16px;
@@ -569,7 +582,153 @@ tr:nth-child(even) {
     line-height: 1;
 }
 
-/* FOOTER SETUP */
+/* GLOSARIUM */
+.glossary-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media(min-width: 768px) {
+    .glossary-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.glossary-item {
+    background: rgba(15, 23, 42, 0.4);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.glossary-item:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    transform: translateY(-2px);
+}
+
+.glossary-term {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.glossary-definition {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* MITOLOGI */
+.mythology-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.mythology-item {
+    background: rgba(15, 23, 42, 0.4);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.mythology-item:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+.mythology-title {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #a78bfa;
+    margin-bottom: 12px;
+}
+
+.mythology-story {
+    color: #c4b5fd;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    padding: 12px;
+    background: rgba(139, 92, 246, 0.05);
+    border-radius: 8px;
+}
+
+.mythology-philosophy {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border-left: 3px solid #8b5cf6;
+}
+
+/* PANDUAN */
+.guide-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media(min-width: 768px) {
+    .guide-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.guide-item {
+    background: rgba(15, 23, 42, 0.4);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.guide-item:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    transform: translateY(-2px);
+}
+
+.guide-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.guide-title {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.guide-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.guide-list li {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding: 4px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.guide-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+}
+
+/* FOOTER */
 .footer {
     text-align: center;
     font-size: 0.8rem;
@@ -593,4 +752,24 @@ tr:nth-child(even) {
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(245, 158, 11, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 158, 11, 0.5);
 }
