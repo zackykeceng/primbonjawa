@@ -497,9 +497,13 @@ tr:nth-child(even) {
     background: rgba(15, 23, 42, 0.5);
     padding: 20px;
     border-radius: var(--radius-md);
-    text-align: justify;
+    text-align: left;
     border: 1px solid rgba(255, 255, 255, 0.05);
     line-height: 1.7;
+}
+
+.ramalan-deskripsi p {
+    margin-bottom: 0;
 }
 
 .skor-container {
