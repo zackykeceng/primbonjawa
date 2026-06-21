@@ -37,209 +37,297 @@ const neptuPasaran = {
 
 /**
  * Tabel Data Kesimpulan (Hasil Perhitungan Neptu)
- * Berdasarkan primbon standar dengan pembagi 10 (atau sisa bagi total neptu)
- * Kode: K01-K10
- * 
- * Setiap hasil dilengkapi dengan:
- * - nama: Nama ramalan
- * - deskripsi: Penjelasan lengkap tentang karakter dan nasib pasangan
- * - skor: Tingkat kecocokan (0-100)
- * - solusi: Saran/tindakan yang dianjurkan
- * - karakter: Sifat-sifat yang dimiliki pasangan
- * - kelebihan: Kelebihan hubungan
- * - kekurangan: Kekurangan yang perlu diwaspadai
  */
 const hasilRamalan = {
-    1: { 
-        nama: "Wasesa Segara",           // K01
-        deskripsi: "👑 Pasangan ini memiliki hati yang mulia dan budi pekerti yang luhur. Mereka akan mudah mendapatkan kekayaan, wibawa, dan penghormatan dari masyarakat sekitarnya. Kehidupan rumah tangga akan dipenuhi dengan harmoni dan kebahagiaan.",
-        skor: 95,
-        solusi: "Pertahankan sikap rendah hati dan teruslah berbuat baik kepada sesama. Jangan pernah sombong meskipun telah mencapai kesuksesan.",
-        karakter: "Mulia, dermawan, berwibawa, bijaksana, dan rendah hati",
-        kelebihan: "Mudah mendapatkan rezeki, dihormati banyak orang, hubungan harmonis, dan beruntung dalam segala usaha",
-        kekurangan: "Cenderung terlalu percaya diri dan mudah dimanfaatkan orang lain"
-    },
-    2: { 
-        nama: "Tunggak Semi",            // K02
-        deskripsi: "✅ Pasangan ini adalah tipe pekerja keras dan pantang menyerah. Mereka memiliki semangat juang yang tinggi dalam meraih kesuksesan. Rezeki selalu mengalir deras dan mereka termasuk orang yang mudah mencapai kesuksesan finansial. Keuletan dan ketekunan menjadi kunci keberhasilan mereka.",
-        skor: 85,
-        solusi: "Jaga keseimbangan antara bekerja dan beristirahat. Luangkan waktu untuk keluarga dan jangan terlalu fokus pada materi saja.",
-        karakter: "Ulet, pekerja keras, tangguh, pantang menyerah, dan ambisius",
-        kelebihan: "Rezeki berlimpah, karir cemerlang, mental baja, dan disiplin tinggi",
-        kekurangan: "Cenderung workaholic dan kurang memperhatikan kesehatan"
-    },
-    3: { 
-        nama: "Satriya Wibawa",          // K03
-        deskripsi: "✨ Pasangan ini ditakdirkan untuk mendapatkan kemuliaan dan keluhuran derajat. Mereka akan memiliki kedudukan yang tinggi dan dihormati oleh banyak orang. Sangat cocok dalam memimpin mahligai keluarga karena memiliki jiwa kepemimpinan yang kuat. Kehidupan mereka akan dipenuhi dengan kehormatan dan pengakuan.",
-        skor: 90,
-        solusi: "Gunakan kedudukan dan pengaruh yang dimiliki untuk membantu orang lain. Jangan lupa untuk selalu bersikap adil dalam setiap keputusan.",
-        karakter: "Berwibawa, pemimpin alami, bijaksana, disegani, dan tegas",
-        kelebihan: "Mudah mendapat kepercayaan orang, karir cemerlang, dihormati, dan sukses dalam kepemimpinan",
-        kekurangan: "Cenderung otoriter dan kurang mendengarkan saran orang lain"
-    },
-    4: { 
-        nama: "Sumur Sinobo",            // K04
-        deskripsi: "🏠 Rezeki pasangan ini bagaikan sumur yang tak pernah kering. Mereka akan selalu hidup dalam kecukupan dan kebahagiaan. Kehidupan mereka penuh dengan kebajikan dan berkah yang melimpah. Pasangan ini memiliki kemampuan untuk menarik kekayaan dan keberuntungan dari berbagai arah.",
-        skor: 80,
-        solusi: "Syukuri setiap nikmat yang diberikan. Jangan lupa untuk berbagi dengan orang yang membutuhkan karena rezeki akan semakin bertambah jika dibagikan.",
-        karakter: "Dermawan, murah hati, bahagia, syukur, dan ramah",
-        kelebihan: "Rezeki berlimpah, banyak teman, hidup bahagia, dan dikelilingi orang baik",
-        kekurangan: "Cenderung boros dan kurang pandai mengelola keuangan"
-    },
-    5: { 
-        nama: "Satriya Wirang",          // K05
-        deskripsi: "⚠️ Pasangan ini sering kali mengalami kesusahan dan rintangan dalam kehidupan sosialnya. Mereka mungkin akan menghadapi berbagai cobaan dan hambatan yang menguji kesabaran. Disarankan untuk memperbanyak sedekah dan rajin memohon doa restu orang tua agar mendapat perlindungan dan kelancaran.",
-        skor: 40,
-        solusi: "Perbanyak sedekah, rajin berdoa memohon restu orang tua, dan selalu introspeksi diri. Kurangi sifat angkuh dan egois. Perbanyak ibadah dan mendekatkan diri kepada Tuhan.",
-        karakter: "Pemberani, ulet, tetapi sering mendapat tantangan dan hambatan dalam hidup",
-        kelebihan: "Memiliki ketahanan mental yang kuat dan tidak mudah menyerah",
-        kekurangan: "Cenderung mendapat musuh, sering difitnah, dan mengalami kesulitan dalam hubungan sosial"
-    },
-    6: { 
-        nama: "Bumi Kapetak",            // K06
-        deskripsi: "🌍 Pasangan ini memiliki kekuatan mental yang bagaikan bumi yang kokoh. Mereka sangat sabar dan tabah dalam menghadapi berbagai dinamika dan prahara dalam berumah tangga. Keteguhan hati dan kesabaran menjadi senjata utama mereka dalam menghadapi setiap badai kehidupan.",
-        skor: 75,
-        solusi: "Pertahankan kesabaran dan keteguhan hati. Jadilah fondasi yang kuat bagi keluarga. Perkuat komunikasi agar tetap harmonis.",
-        karakter: "Sabar, tabah, kokoh, dapat diandalkan, dan kuat mentalnya",
-        kelebihan: "Tahan banting, dapat menjadi sandaran, dan selalu tenang dalam menghadapi masalah",
-        kekurangan: "Cenderung pasif dan kurang berinisiatif dalam mengambil keputusan"
-    },
-    7: { 
-        nama: "Lebur Ketinggang",        // K07
-        deskripsi: "⚠️ Pasangan ini berpotensi sering mengalami cekcok dan pertengkaran. Usaha yang dirintis bersama rentan mengalami kegagalan dan keruntuhan. Diperlukan komunikasi yang intensif dan sikap saling mengalah untuk menjaga keharmonisan rumah tangga.",
-        skor: 30,
-        solusi: "Tingkatkan komunikasi intensif, selalu saling mengalah, dan jangan biarkan ego menguasai. Segera selesaikan setiap konflik dengan kepala dingin. Jangan membawa masalah keesokan harinya.",
-        karakter: "Emosional, mudah tersulut, egois, dan keras kepala",
-        kelebihan: "Memiliki semangat yang besar jika sesuatu sesuai dengan keinginannya",
-        kekurangan: "Sering bertengkar, usaha mudah hancur, dan hubungan tidak harmonis"
-    },
-    8: { 
-        nama: "Padu",                    // K08
-        deskripsi: "🔥 Pasangan ini sering kali terlibat dalam pertengkaran hebat yang berpotensi memicu perpisahan. Perselisihan yang terjadi bisa sangat parah hingga mengancam keutuhan rumah tangga. Harus ekstra hati-hati dalam meredam ego dan menjaga komunikasi agar tidak terjadi hal-hal yang tidak diinginkan.",
-        skor: 25,
-        solusi: "Hindari konflik yang tidak perlu, pelajari teknik mengendalikan ego, dan jangan pernah membawa emosi saat berdiskusi. Segera cari bantuan konseling jika pertengkaran sudah terlalu sering terjadi.",
-        karakter: "Mudah marah, keras kepala, kurang sabar, dan sulit mengendalikan emosi",
-        kelebihan: "Memiliki pendirian yang teguh dan tidak mudah terpengaruh",
-        kekurangan: "Sering konflik, rentan perceraian, dan emosi yang tidak stabil"
-    },
-    9: { 
-        nama: "Pegat",                   // K09
-        deskripsi: "💔 Menurut tradisi primbon, PEGAT memiliki makna yang sangat buruk yaitu perceraian atau perpisahan yang berat. Pasangan ini sangat tidak disarankan untuk melanjutkan hubungan ke jenjang pernikahan karena diprediksi akan berakhir dengan perpisahan yang menyakitkan.",
-        skor: 10,
-        solusi: "Sangat tidak disarankan untuk melanjutkan ke jenjang pernikahan. Jika tetap ingin melanjutkan, lakukan ritual ruwatan dan konsultasi dengan ahli spiritual. Kedua pihak harus benar-benar siap menghadapi segala konsekuensi.",
-        karakter: "Cenderung saling bertolak belakang dan sulit menemukan titik temu",
-        kelebihan: "Masing-masing memiliki kelebihan yang mungkin bisa melengkapi",
-        kekurangan: "Sangat rentan terhadap perceraian, perpisahan, dan konflik berkepanjangan"
-    },
     0: { 
-        nama: "Langgeng Sempurna",       // K10 (sisa 0)
-        deskripsi: "🏆 INILAH KOMBINASI SEMPURNA! Pasangan ini diprediksi akan memiliki keharmonisan yang abadi dan jalinan cinta yang langgeng hingga ajal memisahkan. Hubungan mereka akan dipenuhi dengan cinta, pengertian, dan kebahagiaan yang tak terhingga. Ini adalah jodoh yang sangat ideal menurut perhitungan primbon Jawa.",
+        nama: "Langgeng Sempurna",
+        deskripsi: "🏆 INILAH KOMBINASI SEMPURNA! Pasangan ini diprediksi akan memiliki keharmonisan yang abadi dan jalinan cinta yang langgeng hingga ajal memisahkan.",
         skor: 100,
-        solusi: "Jaga selalu komunikasi yang baik dan jangan pernah lupa untuk saling menghargai. Pertahankan keharmonisan dengan terus menumbuhkan rasa cinta dan kasih sayang setiap hari.",
+        solusi: "Jaga selalu komunikasi yang baik dan jangan pernah lupa untuk saling menghargai.",
         karakter: "Saling mencintai, harmonis, saling memahami, setia, dan dewasa",
         kelebihan: "Hubungan langgeng, dipenuhi cinta, tidak pernah bosan, dan saling melengkapi",
-        kekurangan: "Tidak ada kekurangan yang berarti, hanya perlu menjaga agar tidak terjadi kebosanan"
+        kekurangan: "Tidak ada kekurangan yang berarti, perlu menjaga agar tidak terjadi kebosanan",
+        // Mitologi & Filosofi
+        mitologi: "Langgeng Sempurna adalah cita-cita tertinggi dalam primbon Jawa. Konon, pasangan dengan ramalan ini memiliki ikatan batin yang sangat kuat, seakan-akan mereka adalah dua bagian dari satu jiwa yang sama. Dalam filosofi Jawa, ini disebut 'jodoh sejatining ati' - jodoh yang sejati dari hati yang paling dalam.",
+        filosofi: "Angka 0 melambangkan kesempurnaan dan keabadian. Seperti lingkaran yang tidak memiliki ujung, cinta mereka akan terus berputar tanpa henti. Dalam ajaran Jawa, ini mengajarkan bahwa cinta sejati adalah yang mampu bertahan melewati segala badai kehidupan."
+    },
+    1: { 
+        nama: "Wasesa Segara",
+        deskripsi: "👑 Pasangan ini memiliki hati yang mulia dan budi pekerti yang luhur. Mereka akan mudah mendapatkan kekayaan, wibawa, dan penghormatan dari masyarakat sekitarnya.",
+        skor: 95,
+        solusi: "Pertahankan sikap rendah hati dan teruslah berbuat baik kepada sesama.",
+        karakter: "Mulia, dermawan, berwibawa, bijaksana, dan rendah hati",
+        kelebihan: "Mudah mendapatkan rezeki, dihormati banyak orang, hubungan harmonis",
+        kekurangan: "Cenderung terlalu percaya diri dan mudah dimanfaatkan orang lain",
+        mitologi: "Wasesa Segara berasal dari kata 'Wasesa' (kekuasaan) dan 'Segara' (lautan). Konon, pasangan ini memiliki kekuatan seperti lautan yang luas - mampu menampung segala kebaikan dan keburukan. Dalam mitologi Jawa, mereka diibaratkan sebagai penjaga kebijaksanaan yang dilimpahi kekuatan dari para dewa.",
+        filosofi: "Air laut selalu mengalir ke tempat yang lebih rendah, mengajarkan kerendahan hati. Semakin luas ilmu dan kekuasaan seseorang, semakin rendah hati ia seharusnya. Ini adalah filosofi utama dari ramalan Wasesa Segara."
+    },
+    2: { 
+        nama: "Tunggak Semi",
+        deskripsi: "✅ Pasangan ini adalah tipe pekerja keras dan pantang menyerah. Mereka memiliki semangat juang yang tinggi dalam meraih kesuksesan.",
+        skor: 85,
+        solusi: "Jaga keseimbangan antara bekerja dan beristirahat. Luangkan waktu untuk keluarga.",
+        karakter: "Ulet, pekerja keras, tangguh, pantang menyerah, dan ambisius",
+        kelebihan: "Rezeki berlimpah, karir cemerlang, mental baja, dan disiplin tinggi",
+        kekurangan: "Cenderung workaholic dan kurang memperhatikan kesehatan",
+        mitologi: "Tunggak Semi dalam bahasa Jawa berarti 'tumbuh kembali' atau 'pohon yang bertunas'. Konon, pasangan ini seperti pohon yang selalu mampu tumbuh kembali setelah ditebang - simbol ketahanan dan regenerasi. Dalam cerita rakyat, mereka digambarkan sebagai petani yang ulet yang selalu berhasil memanen meskipun dalam kondisi sulit.",
+        filosofi: "Kehidupan bagaikan musim - ada masa tanam, masa panen, dan masa istirahat. Filosofi Tunggak Semi mengajarkan bahwa kesuksesan sejati bukanlah tentang seberapa cepat kita mencapai tujuan, tetapi tentang kemampuan untuk bangkit kembali setiap kali kita jatuh."
+    },
+    3: { 
+        nama: "Satriya Wibawa",
+        deskripsi: "✨ Pasangan ini ditakdirkan untuk mendapatkan kemuliaan dan keluhuran derajat. Mereka akan memiliki kedudukan yang tinggi dan dihormati oleh banyak orang.",
+        skor: 90,
+        solusi: "Gunakan kedudukan dan pengaruh yang dimiliki untuk membantu orang lain.",
+        karakter: "Berwibawa, pemimpin alami, bijaksana, disegani, dan tegas",
+        kelebihan: "Mudah mendapat kepercayaan orang, karir cemerlang, dihormati",
+        kekurangan: "Cenderung otoriter dan kurang mendengarkan saran orang lain",
+        mitologi: "Satriya Wibawa berarti 'kesatria yang berwibawa'. Dalam pewayangan, karakter ini sering dikaitkan dengan sosok Arjuna - kesatria yang sempurna dalam segala hal. Konon, pasangan ini memiliki 'panji-panji' kehidupan yang selalu berkibar dengan kehormatan.",
+        filosofi: "Kewibawaan bukanlah tentang kekuasaan yang memaksa, tetapi tentang pengaruh yang menginspirasi. Seorang Satriya Wibawa memahami bahwa kekuatan sejati terletak pada kemampuan untuk membimbing dan melindungi, bukan untuk mendominasi."
+    },
+    4: { 
+        nama: "Sumur Sinobo",
+        deskripsi: "🏠 Rezeki pasangan ini bagaikan sumur yang tak pernah kering. Mereka akan selalu hidup dalam kecukupan dan kebahagiaan.",
+        skor: 80,
+        solusi: "Syukuri setiap nikmat yang diberikan. Jangan lupa untuk berbagi dengan orang yang membutuhkan.",
+        karakter: "Dermawan, murah hati, bahagia, syukur, dan ramah",
+        kelebihan: "Rezeki berlimpah, banyak teman, hidup bahagia, dan dikelilingi orang baik",
+        kekurangan: "Cenderung boros dan kurang pandai mengelola keuangan",
+        mitologi: "Sumur Sinobo dalam bahasa Jawa berarti 'sumur yang melimpah'. Konon, pasangan ini seperti sumur ajaib yang airnya tidak pernah habis meskipun terus diambil. Dalam legenda, sumur ini sering dikaitkan dengan sumber kehidupan yang tidak pernah berhenti memberi berkah.",
+        filosofi: "Seperti sumur yang terus memberi tanpa pernah kehabisan, kita diajarkan bahwa kebahagiaan sejati datang dari memberi, bukan menerima. Semakin banyak kita berbagi, semakin banyak pula rezeki yang akan datang."
+    },
+    5: { 
+        nama: "Satriya Wirang",
+        deskripsi: "⚠️ Pasangan ini sering kali mengalami kesusahan dan rintangan dalam kehidupan sosialnya.",
+        skor: 40,
+        solusi: "Perbanyak sedekah, rajin berdoa memohon restu orang tua, dan selalu introspeksi diri.",
+        karakter: "Pemberani, ulet, tetapi sering mendapat tantangan dan hambatan dalam hidup",
+        kelebihan: "Memiliki ketahanan mental yang kuat dan tidak mudah menyerah",
+        kekurangan: "Cenderung mendapat musuh, sering difitnah, dan mengalami kesulitan sosial",
+        mitologi: "Satriya Wirang berarti 'kesatria yang mendapat aib'. Dalam kisah pewayangan, ini mengingatkan pada tokoh yang harus melalui ujian berat sebelum mencapai kejayaannya. Konon, pasangan ini sedang berada dalam fase 'pembersihan' - dimana mereka harus membersihkan karma buruk dari kehidupan sebelumnya.",
+        filosofi: "Wirang (aib) bukanlah akhir segalanya, melainkan awal dari kebijaksanaan. Dalam filosofi Jawa, setiap kekalahan adalah pelajaran, setiap aib adalah batu loncatan menuju kesempurnaan."
+    },
+    6: { 
+        nama: "Bumi Kapetak",
+        deskripsi: "🌍 Pasangan ini memiliki kekuatan mental yang bagaikan bumi yang kokoh.",
+        skor: 75,
+        solusi: "Pertahankan kesabaran dan keteguhan hati. Jadilah fondasi yang kuat bagi keluarga.",
+        karakter: "Sabar, tabah, kokoh, dapat diandalkan, dan kuat mentalnya",
+        kelebihan: "Tahan banting, dapat menjadi sandaran, dan selalu tenang",
+        kekurangan: "Cenderung pasif dan kurang berinisiatif dalam mengambil keputusan",
+        mitologi: "Bumi Kapetak berarti 'bumi yang telah digemburkan'. Konon, pasangan ini seperti tanah yang telah siap ditanami - mereka adalah fondasi yang kokoh bagi keluarga dan masyarakat. Dalam mitologi Jawa, mereka diibaratkan sebagai Dewi Pertiwi (Dewi Bumi) yang melindungi dan menopang semua kehidupan.",
+        filosofi: "Bumi selalu diam, tetapi memiliki kekuatan yang luar biasa. Diam bukan berarti pasif, tetapi menunjukkan kebijaksanaan untuk memilih kapan harus bergerak dan kapan harus tetap teguh."
+    },
+    7: { 
+        nama: "Lebur Ketinggang",
+        deskripsi: "⚠️ Pasangan ini berpotensi sering mengalami cekcok dan pertengkaran.",
+        skor: 30,
+        solusi: "Tingkatkan komunikasi intensif, selalu saling mengalah, dan jangan biarkan ego menguasai.",
+        karakter: "Emosional, mudah tersulut, egois, dan keras kepala",
+        kelebihan: "Memiliki semangat yang besar jika sesuatu sesuai dengan keinginannya",
+        kekurangan: "Sering bertengkar, usaha mudah hancur, dan hubungan tidak harmonis",
+        mitologi: "Lebur Ketinggang berarti 'hancur tergantung'. Dalam pewayangan, ini adalah peringatan tentang kekuatan ego yang dapat menghancurkan hubungan. Konon, pasangan ini seperti dua ekor kera yang saling tarik-menarik rantai - semakin keras ditarik, semakin kuat ikatan yang terjebak.",
+        filosofi: "Kehancuran sering kali datang bukan dari luar, tetapi dari dalam. Lebur Ketinggang mengajarkan bahwa pertengkaran kecil jika dibiarkan akan menjadi badai besar. Kunci kebahagiaan adalah mengendalikan ego dan saling memahami."
+    },
+    8: { 
+        nama: "Padu",
+        deskripsi: "🔥 Pasangan ini sering kali terlibat dalam pertengkaran hebat yang berpotensi memicu perpisahan.",
+        skor: 25,
+        solusi: "Hindari konflik yang tidak perlu, pelajari teknik mengendalikan ego, dan jangan pernah membawa emosi saat berdiskusi.",
+        karakter: "Mudah marah, keras kepala, kurang sabar, dan sulit mengendalikan emosi",
+        kelebihan: "Memiliki pendirian yang teguh dan tidak mudah terpengaruh",
+        kekurangan: "Sering konflik, rentan perceraian, dan emosi yang tidak stabil",
+        mitologi: "Padu berarti 'bertemu dan berbenturan'. Dalam mitologi Jawa, ini adalah simbol dari dua kekuatan yang saling bertabrakan. Konon, pasangan ini seperti dua batu karang yang terus menerus dihantam ombak - pada akhirnya, salah satunya akan hancur jika tidak ada yang mengalah.",
+        filosofi: "Padu mengajarkan bahwa dalam setiap pertemuan ada potensi untuk berbenturan, tetapi juga ada potensi untuk menyatu. Kuncinya adalah menemukan titik keseimbangan antara mempertahankan prinsip dan mengakomodasi pasangan."
+    },
+    9: { 
+        nama: "Pegat",
+        deskripsi: "💔 Menurut tradisi primbon, PEGAT memiliki makna yang sangat buruk yaitu perceraian atau perpisahan yang berat.",
+        skor: 10,
+        solusi: "Sangat tidak disarankan untuk melanjutkan ke jenjang pernikahan. Jika tetap ingin melanjutkan, lakukan ritual ruwatan dan konsultasi dengan ahli spiritual.",
+        karakter: "Cenderung saling bertolak belakang dan sulit menemukan titik temu",
+        kelebihan: "Masing-masing memiliki kelebihan yang mungkin bisa melengkapi",
+        kekurangan: "Sangat rentan terhadap perceraian, perpisahan, dan konflik berkepanjangan",
+        mitologi: "Pegat berarti 'terputus' atau 'patah'. Dalam cerita rakyat Jawa, ini adalah peringatan dari para leluhur tentang ketidakcocokan yang mendasar. Konon, pasangan ini seperti dua utas benang yang berbeda jenis - bisa dijalin menjadi satu, tetapi akan mudah putus karena tidak memiliki daya rekat yang kuat.",
+        filosofi: "Pegat mengajarkan bahwa tidak semua pertemuan adalah takdir. Terkadang, perpisahan adalah bentuk kebaikan yang tertinggi - karena dengan berpisah, kita memberi kesempatan pada diri sendiri dan orang lain untuk menemukan jodoh yang lebih sesuai."
     }
 };
 
-// Data pendukung untuk konversi Masehi ke Weton
+// Data pendukung
 const hariList = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
 const pasaranList = ['Legi', 'Pahing', 'Pon', 'Wage', 'Kliwon'];
+const bulanList = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
-// Variabel global untuk menyimpan hasil konversi weton terakhir
 window.lastWetonResult = null;
 
+// ==================== GLOSARIUM ====================
+const glossaryData = [
+    { term: "Weton", definition: "Hari kelahiran dalam penanggalan Jawa yang merupakan gabungan dari hari dan pasaran. Weton dipercaya memiliki pengaruh terhadap karakter dan nasib seseorang." },
+    { term: "Neptu", definition: "Nilai numerik dari hari dan pasaran. Neptu digunakan sebagai dasar perhitungan dalam primbon Jawa untuk berbagai keperluan, termasuk kecocokan jodoh." },
+    { term: "Pasaran", definition: "Siklus lima hari dalam kalender Jawa yaitu Legi, Pahing, Pon, Wage, dan Kliwon. Setiap pasaran memiliki nilai neptu yang berbeda." },
+    { term: "Primbon", definition: "Kitab warisan leluhur Jawa yang berisi ramalan, perhitungan, dan petunjuk tentang berbagai aspek kehidupan termasuk pernikahan, karier, dan kesehatan." },
+    { term: "Forward Chaining", definition: "Metode penalaran dari fakta menuju kesimpulan. Dalam sistem pakar, metode ini menggunakan data yang diketahui untuk mencari solusi yang tepat." },
+    { term: "Sisa Bagi", definition: "Hasil pembagian total neptu dengan angka 10. Sisa bagi ini yang menentukan kategori ramalan kecocokan pasangan." },
+    { term: "Wasesa Segara", definition: "Ramalan yang berarti 'berkuasa seperti lautan'. Pasangan dengan ramalan ini diprediksi akan memiliki wibawa dan kekayaan." },
+    { term: "Tunggak Semi", definition: "Ramalan yang berarti 'tumbuh kembali'. Pasangan ini akan selalu bangkit dari keterpurukan dan memiliki semangat yang tak pernah padam." },
+    { term: "Satriya Wibawa", definition: "Ramalan yang berarti 'kesatria berwibawa'. Pasangan ini akan mendapatkan kemuliaan dan dihormati banyak orang." },
+    { term: "Sumur Sinobo", definition: "Ramalan yang berarti 'sumur melimpah'. Pasangan ini akan memiliki rezeki yang berlimpah seperti air sumur yang tak pernah kering." },
+    { term: "Satriya Wirang", definition: "Ramalan yang berarti 'kesatria yang mendapat aib'. Pasangan ini akan menghadapi banyak cobaan dan tantangan." },
+    { term: "Bumi Kapetak", definition: "Ramalan yang berarti 'bumi yang digemburkan'. Pasangan ini adalah fondasi yang kokoh dan dapat diandalkan." },
+    { term: "Lebur Ketinggang", definition: "Ramalan yang berarti 'hancur tergantung'. Pasangan ini harus berhati-hati karena berpotensi sering bertengkar." },
+    { term: "Padu", definition: "Ramalan yang berarti 'bertemu dan berbenturan'. Pasangan ini akan sering berselisih dan rentan konflik." },
+    { term: "Pegat", definition: "Ramalan yang berarti 'terputus' atau 'patah'. Ini adalah ramalan terburuk yang menandakan potensi perceraian atau perpisahan." },
+    { term: "Langgeng Sempurna", definition: "Ramalan terbaik yang berarti 'abadi dan sempurna'. Pasangan ini diprediksi memiliki hubungan yang langgeng hingga akhir hayat." }
+];
 
-// ==================== MESIN INFERENSI (INFERENCE ENGINE) ====================
-// Metode: Forward Chaining (Pelacakan ke Depan)
+// ==================== MITOLOGI & FILOSOFI ====================
+const mythologyData = [
+    {
+        title: "Wasesa Segara - Kekuatan Lautan",
+        story: "Dalam mitologi Jawa, Wasesa Segara terinspirasi dari kisah Nyi Roro Kidul, penguasa Laut Selatan. Konon, pasangan dengan ramalan ini memiliki perlindungan dari kekuatan lautan. Mereka diyakini memiliki hubungan spiritual dengan air laut yang mengajarkan tentang kebijaksanaan dan kedalaman hati.",
+        philosophy: "Lautan mengajarkan kita tentang kesabaran, kedalaman, dan kekuatan yang tak terlihat. Seperti ombak yang selalu datang dan pergi, kehidupan pasangan ini akan selalu penuh dengan pasang surut, namun mereka akan tetap teguh seperti karang di tepian."
+    },
+    {
+        title: "Tunggak Semi - Tunas Kehidupan",
+        story: "Kisah Tunggak Semi berasal dari legenda pohon Dewandaru yang selalu tumbuh kembali meskipun ditebang. Konon, pasangan ini memiliki semangat hidup seperti pohon tersebut - tidak pernah padam dan selalu mencari jalan untuk bertahan.",
+        philosophy: "Hidup adalah tentang proses tumbuh dan berkembang. Setiap jatuh adalah kesempatan untuk bangkit kembali dengan lebih kuat. Tunggak Semi mengajarkan bahwa dalam setiap kegagalan, selalu ada benih keberhasilan yang siap bertunas."
+    },
+    {
+        title: "Satriya Wibawa - Kesatria Sejati",
+        story: "Terinspirasi dari sosok Arjuna dalam pewayangan, Satriya Wibawa melambangkan kesatria yang sempurna. Konon, pasangan ini memiliki 'kesaktian' yang membuat mereka selalu berada di jalur kebenaran dan keadilan.",
+        philosophy: "Kewibawaan sejati bukanlah tentang seberapa banyak orang yang takut pada kita, tetapi tentang seberapa banyak orang yang terinspirasi oleh kita. Seorang Satriya Wibawa menggunakan kekuatannya untuk melindungi, bukan untuk menindas."
+    },
+    {
+        title: "Sumur Sinobo - Sumber Kehidupan",
+        story: "Dalam cerita rakyat Jawa, Sumur Sinobo adalah sumur ajaib yang memberikan air tanpa henti. Konon, pasangan dengan ramalan ini memiliki 'sumur' rezeki yang tidak pernah kering - mereka selalu dikelilingi oleh keberuntungan dan berkah.",
+        philosophy: "Sumur Sinobo mengajarkan bahwa kebahagiaan sejati datang dari memberi, bukan menerima. Semakin banyak kita berbagi, semakin banyak pula yang akan kita terima. Ini adalah hukum alam yang tidak pernah berubah."
+    },
+    {
+        title: "Satriya Wirang - Ujian Kesatria",
+        story: "Satriya Wirang adalah kisah tentang kesatria yang harus melalui jalan terjal menuju kejayaan. Konon, setiap aib dan kekalahan yang dialami adalah bagian dari proses pembersihan diri yang akan membawa mereka pada kebijaksanaan sejati.",
+        philosophy: "Wirang (aib) adalah guru terbaik. Melalui kegagalan dan penghinaan, kita belajar untuk menjadi lebih rendah hati dan bijaksana. Tidak ada kesuksesan yang lahir tanpa perjuangan."
+    },
+    {
+        title: "Bumi Kapetak - Fondasi Kehidupan",
+        story: "Terinspirasi dari Dewi Pertiwi, Bumi Kapetak melambangkan kekuatan dan kesuburan. Konon, pasangan ini memiliki 'tanah' yang subur untuk menumbuhkan segala sesuatu - mulai dari cinta, keluarga, hingga karir.",
+        philosophy: "Seperti bumi yang selalu menerima dan memberi kehidupan, pasangan Bumi Kapetak adalah fondasi yang kokoh. Mereka mengajarkan bahwa kesabaran dan ketabahan adalah kunci untuk membangun sesuatu yang abadi."
+    },
+    {
+        title: "Lebur Ketinggang - Peringatan Ego",
+        story: "Kisah ini mengingatkan pada pertempuran antara Rama dan Rahwana dalam Ramayana. Konon, Lebur Ketinggang adalah peringatan bahwa ego dan kesombongan akan menghancurkan apa pun yang kita bangun.",
+        philosophy: "Lebur Ketinggang mengajarkan bahwa dalam setiap hubungan, kita harus belajar untuk mengalah. Tidak ada kemenangan dalam pertengkaran - yang ada hanya kehancuran. Cinta sejati adalah tentang memberi, bukan tentang menang."
+    },
+    {
+        title: "Padu - Pertemuan Dua Kekuatan",
+        story: "Padu terinspirasi dari kisah pertemuan dua kekuatan besar dalam mitologi Jawa - seperti pertemuan antara langit dan bumi. Konon, pasangan ini harus belajar untuk menemukan harmoni di antara perbedaan mereka.",
+        philosophy: "Perbedaan bukanlah kutukan, tetapi karunia. Padu mengajarkan bahwa dua orang yang berbeda dapat bersatu dengan indah jika mereka mau saling melengkapi dan memahami."
+    },
+    {
+        title: "Pegat - Perpisahan yang Bijaksana",
+        story: "Pegat adalah peringatan dari para leluhur tentang pentingnya menyadari ketidakcocokan. Dalam kisah pewayangan, terkadang perpisahan adalah langkah terbaik yang diambil oleh orang-orang bijaksana.",
+        philosophy: "Tidak semua pertemuan adalah takdir. Terkadang, berpisah adalah bentuk cinta tertinggi - karena kita memberi kebebasan kepada orang yang kita cintai untuk menemukan kebahagiaan sejatinya."
+    },
+    {
+        title: "Langgeng Sempurna - Cinta Sejati",
+        story: "Ini adalah ramalan paling langka dan paling diinginkan. Konon, pasangan dengan ramalan ini adalah 'jodoh sejatining ati' - dua jiwa yang diciptakan untuk satu sama lain sejak awal waktu.",
+        philosophy: "Cinta sejati tidak pernah berakhir. Langgeng Sempurna mengajarkan bahwa cinta bukan tentang menemukan orang yang sempurna, tetapi tentang melihat ketidaksempurnaan seseorang dan tetap mencintainya sepenuh hati."
+    }
+];
 
-/**
- * Fungsi: hitungTotalNeptu
- * Menjumlahkan neptu hari dan pasaran dari kedua pasangan
- * @param {string} hariPria - Hari lahir pria
- * @param {string} pasaranPria - Pasaran lahir pria
- * @param {string} hariWanita - Hari lahir wanita
- * @param {string} pasaranWanita - Pasaran lahir wanita
- * @returns {number} Total neptu
- */
+// ==================== PANDUAN PERNIKAHAN ====================
+const guideData = [
+    {
+        title: "Panduan Umum Membina Rumah Tangga",
+        content: "1. Selalu jaga komunikasi yang terbuka dan jujur\n2. Saling menghormati dan menghargai perbedaan\n3. Bangun kepercayaan melalui konsistensi dan kesetiaan\n4. Luangkan waktu berkualitas bersama secara rutin\n5. Hadapi masalah bersama dengan kepala dingin",
+        icon: "💑"
+    },
+    {
+        title: "Tips untuk Pasangan Langgeng Sempurna",
+        content: "1. Jangan pernah bosan menunjukkan kasih sayang\n2. Teruslah bertumbuh bersama sebagai pasangan\n3. Jadikan setiap hari sebagai hari istimewa\n4. Jaga api cinta tetap menyala dengan kejutan-kejutan kecil\n5. Selalu bersyukur atas kehadiran pasangan",
+        icon: "🏆"
+    },
+    {
+        title: "Tips untuk Pasangan Wasesa Segara",
+        content: "1. Gunakan wibawa untuk membantu orang lain\n2. Jaga kerendahan hati meskipun telah sukses\n3. Jadilah teladan bagi keluarga dan masyarakat\n4. Seimbangkan kehidupan material dan spiritual\n5. Perkuat ikatan dengan doa bersama",
+        icon: "👑"
+    },
+    {
+        title: "Tips untuk Pasangan Tunggak Semi",
+        content: "1. Jaga keseimbangan antara kerja dan istirahat\n2. Prioritaskan keluarga di tengah kesibukan\n3. Bangun visi bersama untuk masa depan\n4. Dukung karir masing-masing tanpa mengorbankan waktu bersama\n5. Belajar untuk menikmati proses, bukan hanya hasil",
+        icon: "🌱"
+    },
+    {
+        title: "Tips untuk Pasangan Satriya Wibawa",
+        content: "1. Gunakan pengaruh untuk kebaikan banyak orang\n2. Dengarkan saran dan masukan dari pasangan\n3. Bagilah tanggung jawab dalam rumah tangga\n4. Jadilah pemimpin yang melayani, bukan mendominasi\n5. Tetap rendah hati di tengah kemuliaan",
+        icon: "⚔️"
+    },
+    {
+        title: "Tips untuk Pasangan Sumur Sinobo",
+        content: "1. Kelola keuangan dengan bijak\n2. Jangan lupa bersyukur dan berbagi\n3. Investasikan rezeki untuk masa depan\n4. Bangun dana darurat untuk situasi tak terduga\n5. Hindari gaya hidup konsumtif yang berlebihan",
+        icon: "🏠"
+    },
+    {
+        title: "Tips untuk Pasangan Satriya Wirang",
+        content: "1. Perbanyak sedekah dan amal kebaikan\n2. Jaga hubungan baik dengan orang tua\n3. Perbanyak doa dan ibadah\n4. Hindari konflik yang tidak perlu\n5. Fokus pada pengembangan diri dan karir",
+        icon: "🛡️"
+    },
+    {
+        title: "Tips untuk Pasangan Bumi Kapetak",
+        content: "1. Jangan terlalu pasif, ambil inisiatif\n2. Berani mengambil keputusan bersama\n3. Kembangkan keberanian dalam menghadapi tantangan\n4. Jangan takut untuk memulai sesuatu yang baru\n5. Bersikaplah lebih spontan dan menyenangkan",
+        icon: "🌍"
+    },
+    {
+        title: "Tips untuk Pasangan Lebur Ketinggang",
+        content: "1. Pelajari teknik komunikasi yang baik\n2. Kurangi ego dan belajar mengalah\n3. Jangan memperbesar masalah kecil\n4. Segera selesaikan konflik tanpa ditunda\n5. Cari bantuan konseling jika diperlukan",
+        icon: "⚠️"
+    },
+    {
+        title: "Tips untuk Pasangan Padu",
+        content: "1. Hindari kata-kata yang menyakitkan\n2. Belajar mengendalikan emosi\n3. Beri waktu untuk menenangkan diri\n4. Jangan berdebat di depan anak\n5. Cari titik tengah dalam setiap perbedaan",
+        icon: "🔥"
+    },
+    {
+        title: "Tips untuk Pasangan Pegat",
+        content: "1. Pertimbangkan kembali dengan matang\n2. Konsultasi dengan orang tua dan ahli\n3. Lakukan ritual ruwatan jika memungkinkan\n4. Siapkan mental untuk segala kemungkinan\n5. Jangan memaksakan diri jika sudah tidak cocok",
+        icon: "💔"
+    }
+];
+
+// ==================== MESIN INFERENSI ====================
+
 function hitungTotalNeptu(hariPria, pasaranPria, hariWanita, pasaranWanita) {
     const neptuPria = neptuHari[hariPria] + neptuPasaran[pasaranPria];
     const neptuWanita = neptuHari[hariWanita] + neptuPasaran[pasaranWanita];
     return neptuPria + neptuWanita;
 }
 
-/**
- * Fungsi: hitungSisaBagi
- * Menghitung sisa bagi total neptu dengan aturan primbon:
- * - Jika total > 10, maka sisa = total % 10
- * - Jika total <= 10, maka sisa = total
- * @param {number} totalNeptu - Total neptu kedua pasangan
- * @returns {number} Sisa bagi (0-9)
- */
 function hitungSisaBagi(totalNeptu) {
     return totalNeptu > 10 ? totalNeptu % 10 : totalNeptu;
 }
 
-/**
- * Fungsi: getKesimpulan
- * Mencocokkan sisa bagi dengan basis aturan (Rule Base)
- * Mengimplementasikan Forward Chaining: dari fakta (sisa) ke kesimpulan
- * @param {number} sisa - Sisa bagi total neptu
- * @returns {object} Objek hasil ramalan (nama, deskripsi, skor, solusi)
- */
 function getKesimpulan(sisa) {
-    // Rule Base: IF sisa = X THEN kesimpulan = Y
-    // Forward Chaining: fakta sisa memicu rule yang sesuai
     if (hasilRamalan[sisa]) {
         return hasilRamalan[sisa];
     }
-    // Default fallback
     return hasilRamalan[0];
 }
 
-/**
- * Fungsi: cekPantanganKhusus
- * Mengecek pantangan khusus berdasarkan primbon (total neptu 25 dari 10+15)
- * @param {number} neptuPria - Neptu pria
- * @param {number} neptuWanita - Neptu wanita
- * @returns {boolean} True jika termasuk pantangan
- */
 function cekPantanganKhusus(neptuPria, neptuWanita) {
     const total = neptuPria + neptuWanita;
     return (total === 25 && neptuPria === 10 && neptuWanita === 15) ||
            (total === 25 && neptuPria === 15 && neptuWanita === 10);
 }
 
-/**
- * Fungsi: cekTotal25TapiAman
- * Mengecek apakah total neptu 25 tetapi bukan pantangan 10+15
- * @param {number} totalNeptu - Total neptu
- * @param {number} neptuPria - Neptu pria
- * @param {number} neptuWanita - Neptu wanita
- * @returns {boolean} True jika total 25 tapi aman
- */
 function cekTotal25TapiAman(totalNeptu, neptuPria, neptuWanita) {
     return totalNeptu === 25 && neptuPria !== 10 && neptuWanita !== 10;
 }
 
+// ==================== KONVERSI MASEHI KE WETON ====================
 
-// ==================== FUNGSI KONVERSI MASEHI KE WETON ====================
-
-/**
- * Fungsi: getWetonFromDate
- * Mengkonversi tanggal Masehi ke weton Jawa
- * @param {number} tanggal - Tanggal (1-31)
- * @param {number} bulan - Bulan (1-12)
- * @param {number} tahun - Tahun (1900-2100)
- * @returns {object} Objek berisi hari, pasaran, neptu, dan weton
- */
 function getWetonFromDate(tanggal, bulan, tahun) {
     const targetDate = new Date(tahun, bulan - 1, tanggal);
     const baseDate = new Date(1900, 0, 1);
     const diffDays = Math.floor((targetDate - baseDate) / (1000 * 60 * 60 * 24));
     
-    // Perhitungan hari dan pasaran berdasarkan selisih hari dari 1 Januari 1900
-    // 1 Januari 1900 adalah hari Senin (index 1) dan pasaran Legi (index 0)
     const hariIndex = (1 + diffDays) % 7;
     const pasaranIndex = (1 + diffDays) % 5;
     
@@ -250,10 +338,6 @@ function getWetonFromDate(tanggal, bulan, tahun) {
     return { hari, pasaran, neptu: neptuTotal, weton: `${hari} ${pasaran}` };
 }
 
-/**
- * Fungsi: cariWeton
- * Handler untuk tombol konversi Masehi ke Weton
- */
 function cariWeton() {
     const tgl = parseInt(document.getElementById('tgl').value);
     const bln = parseInt(document.getElementById('bln').value);
@@ -266,7 +350,6 @@ function cariWeton() {
     
     const result = getWetonFromDate(tgl, bln, thn);
     
-    // Update tampilan
     document.getElementById('weton-text').innerHTML = `📅 ${tgl}/${bln}/${thn}`;
     document.getElementById('weton-nama').innerHTML = result.weton;
     document.getElementById('neptu-hasil').innerHTML = result.neptu;
@@ -276,73 +359,130 @@ function cariWeton() {
     window.lastWetonResult = result;
 }
 
-/**
- * Fungsi: transferKePria
- * Mentransfer hasil konversi weton ke form pria
- */
 function transferKePria() {
     if (window.lastWetonResult) {
         document.getElementById('pria-hari').value = window.lastWetonResult.hari;
         document.getElementById('pria-pasaran').value = window.lastWetonResult.pasaran;
-        hitungKecocokan(); // Langsung hitung ulang
+        hitungKecocokan();
     } else {
         alert('Hitung atau cari weton terlebih dahulu!');
     }
 }
 
-/**
- * Fungsi: transferKeWanita
- * Mentransfer hasil konversi weton ke form wanita
- */
 function transferKeWanita() {
     if (window.lastWetonResult) {
         document.getElementById('wanita-hari').value = window.lastWetonResult.hari;
         document.getElementById('wanita-pasaran').value = window.lastWetonResult.pasaran;
-        hitungKecocokan(); // Langsung hitung ulang
+        hitungKecocokan();
     } else {
         alert('Hitung atau cari weton terlebih dahulu!');
     }
 }
 
+// ==================== TAB NAVIGATION ====================
 
-// ==================== FUNGSI UTAMA DIAGNOSIS ====================
+document.addEventListener('DOMContentLoaded', function() {
+    // Tab navigation
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const tabId = this.dataset.tab;
+            
+            // Update active button
+            tabBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Update active content
+            tabContents.forEach(c => c.classList.remove('active'));
+            document.getElementById('tab-' + tabId).classList.add('active');
+        });
+    });
+    
+    // Load initial data
+    cariWeton();
+    hitungKecocokan();
+    loadGlossary();
+    loadMythology();
+    loadGuide();
+});
 
-/**
- * Fungsi: hitungKecocokan
- * FUNGSI UTAMA - Melakukan diagnosis kecocokan jodoh
- * Alur Forward Chaining:
- * 1. Terima fakta (input hari & pasaran dari user)
- * 2. Hitung total neptu
- * 3. Hitung sisa bagi (aturan: jika total > 10 maka total % 10, else total)
- * 4. Cocokkan dengan Rule Base
- * 5. Tarik kesimpulan
- * 6. Tampilkan hasil diagnosis
- */
+// ==================== GLOSARIUM ====================
+
+function loadGlossary() {
+    const container = document.getElementById('glossary-container');
+    let html = '';
+    
+    glossaryData.forEach(item => {
+        html += `
+            <div class="glossary-item">
+                <div class="glossary-term">${item.term}</div>
+                <div class="glossary-definition">${item.definition}</div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
+// ==================== MITOLOGI & FILOSOFI ====================
+
+function loadMythology() {
+    const container = document.getElementById('mythology-container');
+    let html = '';
+    
+    mythologyData.forEach(item => {
+        html += `
+            <div class="mythology-item">
+                <div class="mythology-title">${item.title}</div>
+                <div class="mythology-story">📖 ${item.story}</div>
+                <div class="mythology-philosophy">🧘 ${item.philosophy}</div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
+// ==================== PANDUAN PERNIKAHAN ====================
+
+function loadGuide() {
+    const container = document.getElementById('guide-container');
+    let html = '';
+    
+    guideData.forEach(item => {
+        const contentList = item.content.split('\n').filter(line => line.trim() !== '');
+        let contentHtml = contentList.map(line => `<li>${line.trim()}</li>`).join('');
+        
+        html += `
+            <div class="guide-item">
+                <div class="guide-icon">${item.icon}</div>
+                <div class="guide-title">${item.title}</div>
+                <ul class="guide-list">${contentHtml}</ul>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
+// ==================== FUNGSI UTAMA KECOCOKAN ====================
+
 function hitungKecocokan() {
-    // ===== TAHAP 1: AKUISISI FAKTA DARI USER =====
     const priaHari = document.getElementById('pria-hari').value;
     const priaPasaran = document.getElementById('pria-pasaran').value;
     const wanitaHari = document.getElementById('wanita-hari').value;
     const wanitaPasaran = document.getElementById('wanita-pasaran').value;
     
-    // ===== TAHAP 2: HITUNG NEPTU MASING-MASING =====
     const neptuPria = neptuHari[priaHari] + neptuPasaran[priaPasaran];
     const neptuWanita = neptuHari[wanitaHari] + neptuPasaran[wanitaPasaran];
-    
-    // ===== TAHAP 3: HITUNG TOTAL NEPTU =====
     const totalNeptu = neptuPria + neptuWanita;
-    
-    // ===== TAHAP 4: HITUNG SISA BAGI =====
     const sisa = hitungSisaBagi(totalNeptu);
-    
-    // ===== TAHAP 5: COCOKKAN DENGAN RULE BASE (FORWARD CHAINING) =====
     const ramalan = getKesimpulan(sisa);
-    
-    // ===== TAHAP 6: CEK PANTANGAN KHUSUS =====
     const isPantangan = cekPantanganKhusus(neptuPria, neptuWanita);
     const isTotal25Aman = cekTotal25TapiAman(totalNeptu, neptuPria, neptuWanita);
     
-    // ===== TAHAP 7: TAMPILKAN HASIL DIAGNOSIS =====
     tampilkanHasilDiagnosis({
         priaHari, priaPasaran, neptuPria,
         wanitaHari, wanitaPasaran, neptuWanita,
@@ -350,15 +490,9 @@ function hitungKecocokan() {
     });
 }
 
-/**
- * Fungsi: tampilkanHasilDiagnosis
- * Menampilkan hasil diagnosis ke antarmuka pengguna
- * @param {object} data - Data hasil perhitungan
- */
 function tampilkanHasilDiagnosis(data) {
     const { priaHari, priaPasaran, neptuPria, wanitaHari, wanitaPasaran, neptuWanita, totalNeptu, sisa, ramalan, isPantangan, isTotal25Aman } = data;
     
-    // Konfigurasi warna berdasarkan skor
     let warnaUtama = ramalan.skor >= 80 ? '#166534' : (ramalan.skor >= 60 ? '#d97706' : '#991b1b');
     let warnaBgJudul = ramalan.skor >= 80 ? '#f0fdf4' : (ramalan.skor >= 60 ? '#fef3c7' : '#fef2f2');
     
@@ -367,7 +501,6 @@ function tampilkanHasilDiagnosis(data) {
         warnaBgJudul = '#fef2f2';
     }
     
-    // Banner pantangan khusus
     let warningHtml = '';
     if (isPantangan) {
         warningHtml = `
@@ -376,7 +509,7 @@ function tampilkanHasilDiagnosis(data) {
                 <div class="warning-content">
                     <strong>⚠️ PANTANGAN UTAMA PRIMBON (NEPTU 10 + 15) ⚠️</strong><br>
                     Kombinasi total Neptu berjumlah ${totalNeptu} (${neptuPria} + ${neptuWanita}) terdeteksi sebagai LARANGAN MUTLAK.<br>
-                    <strong style="text-decoration: underline;">Hukum Tradisi: Sangat tidak disarankan untuk melanjutkan jenjang pernikahan.</strong>
+                    <strong>Hukum Tradisi: Sangat tidak disarankan untuk melanjutkan jenjang pernikahan.</strong>
                 </div>
             </div>
         `;
@@ -392,7 +525,6 @@ function tampilkanHasilDiagnosis(data) {
         `;
     }
     
-    // Informasi lengkap ramalan
     let deskripsiTambahan = `
         <p>${ramalan.deskripsi}</p>
         <br>
@@ -421,21 +553,6 @@ function tampilkanHasilDiagnosis(data) {
         `;
     }
     
-    if (isPantangan) {
-        deskripsiTambahan += `
-            <div style="background: rgba(239,68,68,0.15); padding: 16px; border-radius: 12px; margin-top: 12px; border: 2px solid #ef4444;">
-                <strong style="color: #ef4444;">✘ STATUS PANTANGAN AKTIF: PERNIKAHAN TIDAK DIANJURKAN.</strong>
-            </div>
-        `;
-    } else if (isTotal25Aman) {
-        deskripsiTambahan += `
-            <div style="background: rgba(34,197,94,0.15); padding: 16px; border-radius: 12px; margin-top: 12px; border: 2px solid #22c55e;">
-                <strong style="color: #22c55e;">✓ STATUS AMAN: KOMBINASI TIDAK TERMASUK LARANGAN.</strong>
-            </div>
-        `;
-    }
-    
-    // Generate HTML hasil
     const html = `
         <div class="hasil-card">
             <div class="hasil-weton-info">
@@ -452,6 +569,15 @@ function tampilkanHasilDiagnosis(data) {
                 </div>
                 <div class="ramalan-deskripsi">
                     ${deskripsiTambahan}
+                    
+                    <!-- Mitologi & Filosofi -->
+                    ${ramalan.mitologi ? `
+                        <div style="background: rgba(139,92,246,0.1); padding: 16px; border-radius: 12px; margin-top: 16px; border-left: 3px solid #8b5cf6;">
+                            <strong style="color: #a78bfa;">📖 Mitologi & Filosofi:</strong><br>
+                            <p style="margin-top: 8px; font-style: italic; color: #c4b5fd;">${ramalan.mitologi}</p>
+                            <p style="margin-top: 8px; color: #a78bfa;">🧘 ${ramalan.filosofi}</p>
+                        </div>
+                    ` : ''}
                 </div>
             </div>
 
@@ -477,20 +603,135 @@ function tampilkanHasilDiagnosis(data) {
     hasilDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
+// ==================== HARI BAIK PERNIKAHAN ====================
+
+function hitungHariBaik() {
+    const priaHari = document.getElementById('wedding-pria-hari').value;
+    const priaPasaran = document.getElementById('wedding-pria-pasaran').value;
+    const wanitaHari = document.getElementById('wedding-wanita-hari').value;
+    const wanitaPasaran = document.getElementById('wedding-wanita-pasaran').value;
+    const tahun = parseInt(document.getElementById('wedding-tahun').value);
+    const bulan = parseInt(document.getElementById('wedding-bulan').value);
+    
+    if (isNaN(tahun) || tahun < 2024 || tahun > 2035) {
+        alert('Masukkan tahun yang valid (2024-2035)');
+        return;
+    }
+    
+    const neptuPria = neptuHari[priaHari] + neptuPasaran[priaPasaran];
+    const neptuWanita = neptuHari[wanitaHari] + neptuPasaran[wanitaPasaran];
+    const totalNeptu = neptuPria + neptuWanita;
+    
+    // Cari hari baik dalam bulan yang dipilih
+    let goodDays = [];
+    const daysInMonth = new Date(tahun, bulan, 0).getDate();
+    
+    for (let day = 1; day <= daysInMonth; day++) {
+        const weton = getWetonFromDate(day, bulan, tahun);
+        const neptuHariIni = neptuHari[weton.hari] + neptuPasaran[weton.pasaran];
+        
+        // Perhitungan hari baik: total neptu hari + total neptu pasangan
+        const total = neptuHariIni + totalNeptu;
+        const sisa = hitungSisaBagi(total);
+        
+        // Hari baik jika sisa 0, 1, 2, 3, 4, 6 (angka baik dalam primbon)
+        const isGood = [0, 1, 2, 3, 4, 6].includes(sisa);
+        
+        if (isGood) {
+            goodDays.push({
+                tanggal: day,
+                weton: weton.weton,
+                neptu: neptuHariIni,
+                sisa: sisa,
+                makna: getMaknaSisa(sisa)
+            });
+        }
+    }
+    
+    // Tampilkan hasil
+    let html = `
+        <div class="hasil-card" style="margin-top: 24px;">
+            <div class="panel-header">
+                <h2>📅 Hasil Pencarian Hari Baik</h2>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 16px;">
+                Bulan ${bulanList[bulan-1]} ${tahun} | Total Neptu Pasangan: <strong>${totalNeptu}</strong>
+            </p>
+    `;
+    
+    if (goodDays.length === 0) {
+        html += `
+            <div style="text-align: center; padding: 40px; color: var(--text-muted);">
+                <p>😔 Tidak ditemukan hari baik di bulan ini.</p>
+                <p>Coba cari di bulan lain atau tahun yang berbeda.</p>
+            </div>
+        `;
+    } else {
+        html += `
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; max-height: 400px; overflow-y: auto; padding-right: 8px;">
+        `;
+        
+        goodDays.forEach(day => {
+            const color = day.sisa === 0 ? '#22c55e' : (day.sisa <= 4 ? '#f59e0b' : '#8b5cf6');
+            html += `
+                <div style="background: rgba(15,23,42,0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 16px; text-align: center;">
+                    <div style="font-size: 1.5rem; font-weight: 800; color: #ffffff;">${day.tanggal}</div>
+                    <div style="color: ${color}; font-weight: 600; margin: 4px 0;">${day.weton}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">
+                        Neptu: ${day.neptu} | Sisa: ${day.sisa}
+                    </div>
+                    <div style="font-size: 0.7rem; color: ${color}; margin-top: 4px;">${day.makna}</div>
+                    <button class="btn btn-gold" style="margin-top: 8px; padding: 6px 12px; font-size: 0.7rem; width: auto;" onclick="alert('Hari ${day.tanggal} ${bulanList[bulan-1]} ${tahun} dipilih sebagai hari baik pernikahan!')">
+                        Pilih Hari Ini
+                    </button>
+                </div>
+            `;
+        });
+        
+        html += `</div>`;
+        
+        // Rekomendasi
+        const bestDay = goodDays[0];
+        html += `
+            <div style="margin-top: 20px; padding: 16px; background: rgba(34,197,94,0.1); border-radius: 12px; border: 1px solid rgba(34,197,94,0.2);">
+                <strong style="color: #86efac;">💍 Rekomendasi Terbaik:</strong><br>
+                <span style="color: #ffffff;">Tanggal <strong>${bestDay.tanggal} ${bulanList[bulan-1]} ${tahun}</strong> (${bestDay.weton})</span><br>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Makna: ${bestDay.makna}</span>
+            </div>
+        `;
+    }
+    
+    html += `</div>`;
+    
+    const container = document.getElementById('hasil-hari-baik');
+    container.innerHTML = html;
+    container.classList.add('show');
+    container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function getMaknaSisa(sisa) {
+    const makna = {
+        0: 'Sempurna, sangat baik',
+        1: 'Mulia, berwibawa',
+        2: 'Kuat, pekerja keras',
+        3: 'Dihormati, beruntung',
+        4: 'Rezeki berlimpah',
+        5: 'Penuh cobaan (kurang baik)',
+        6: 'Kokoh, dapat diandalkan',
+        7: 'Cenderung konflik (kurang baik)',
+        8: 'Sering berselisih (kurang baik)',
+        9: 'Sangat tidak baik'
+    };
+    return makna[sisa] || 'Tidak diketahui';
+}
 
 // ==================== INISIALISASI AWAL ====================
 
-/**
- * Inisialisasi saat halaman load
- * Menampilkan contoh default (17 Agustus 1945)
- */
 window.onload = function() {
-    // Set default value (17 Agustus 1945 - Hari Kemerdekaan RI)
     document.getElementById('tgl').value = 17;
     document.getElementById('bln').value = 8;
     document.getElementById('thn').value = 1945;
     
-    // Jalankan konversi dan diagnosis default
     cariWeton();
     hitungKecocokan();
 };
