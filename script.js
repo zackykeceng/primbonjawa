@@ -9,33 +9,14 @@
 
 // ==================== BASIS PENGETAHUAN (KNOWLEDGE BASE) ====================
 
-/**
- * Tabel Data Premis 1: Nilai Neptu Hari
- * Kode: G01-G07
- */
 const neptuHari = { 
-    'Minggu': 5,   // G01
-    'Senin': 4,    // G02
-    'Selasa': 3,   // G03
-    'Rabu': 7,     // G04
-    'Kamis': 8,    // G05
-    'Jumat': 6,    // G06
-    'Sabtu': 9     // G07
+    'Minggu': 5, 'Senin': 4, 'Selasa': 3, 'Rabu': 7, 'Kamis': 8, 'Jumat': 6, 'Sabtu': 9
 };
 
-/**
- * Tabel Data Premis 2: Nilai Neptu Pasaran
- * Kode: G08-G12
- */
 const neptuPasaran = { 
-    'Legi': 5,     // G08
-    'Pahing': 9,   // G09
-    'Pon': 7,      // G10
-    'Wage': 4,     // G11
-    'Kliwon': 8    // G12
+    'Legi': 5, 'Pahing': 9, 'Pon': 7, 'Wage': 4, 'Kliwon': 8
 };
 
-// Data pendukung
 const hariList = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
 const pasaranList = ['Legi', 'Pahing', 'Pon', 'Wage', 'Kliwon'];
 const bulanList = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
@@ -44,10 +25,6 @@ window.lastWetonResult = null;
 
 // ==================== PAKAR 1: BAPAK SAIMAN ====================
 
-/**
- * Tabel Data Kesimpulan - PAKAR 1: Bapak Saiman
- * Metode: Sisa bagi dari total neptu / 10
- */
 const hasilRamalanSaiman = {
     0: { 
         nama: "Langgeng Sempurna",
@@ -57,152 +34,145 @@ const hasilRamalanSaiman = {
         karakter: "Saling mencintai, harmonis, saling memahami, setia, dan dewasa",
         kelebihan: "Hubungan langgeng, dipenuhi cinta, tidak pernah bosan, dan saling melengkapi dengan sempurna",
         kekurangan: "Tidak ada kekurangan yang berarti, namun perlu menjaga agar tidak terjadi kebosanan dalam hubungan",
-        mitologi: "Langgeng Sempurna adalah cita-cita tertinggi dalam primbon Jawa. Konon, pasangan dengan ramalan ini memiliki ikatan batin yang sangat kuat, seakan-akan mereka adalah dua bagian dari satu jiwa yang sama.",
-        filosofi: "Angka 0 melambangkan kesempurnaan dan keabadian. Seperti lingkaran yang tidak memiliki ujung, cinta mereka akan terus berputar tanpa henti."
+        mitologi: "Langgeng Sempurna adalah cita-cita tertinggi dalam primbon Jawa.",
+        filosofi: "Angka 0 melambangkan kesempurnaan dan keabadian."
     },
     1: { 
         nama: "Wasesa Segara",
-        deskripsi: "👑 Pasangan ini memiliki hati yang mulia dan budi pekerti yang luhur. Mereka akan mudah mendapatkan kekayaan, wibawa, dan penghormatan dari masyarakat sekitarnya. Kehidupan mereka akan dipenuhi dengan kemuliaan dan keberkahan.",
+        deskripsi: "👑 Pasangan ini memiliki hati yang mulia dan budi pekerti yang luhur. Mereka akan mudah mendapatkan kekayaan, wibawa, dan penghormatan dari masyarakat sekitarnya.",
         skor: 95,
-        solusi: "Pertahankan sikap rendah hati dan teruslah berbuat baik kepada sesama. Jangan sampai wibawa yang dimiliki membuat Anda menjadi sombong.",
+        solusi: "Pertahankan sikap rendah hati dan teruslah berbuat baik kepada sesama.",
         karakter: "Mulia, dermawan, berwibawa, bijaksana, dan rendah hati",
-        kelebihan: "Mudah mendapatkan rezeki, dihormati banyak orang, hubungan harmonis, dan memiliki pengaruh yang baik",
-        kekurangan: "Cenderung terlalu percaya diri dan mudah dimanfaatkan oleh orang lain yang tidak bertanggung jawab",
-        mitologi: "Wasesa Segara berasal dari kata 'Wasesa' (kekuasaan) dan 'Segara' (lautan). Konon, pasangan ini memiliki kekuatan seperti lautan yang luas - mampu menampung segala kebaikan dan keburukan.",
-        filosofi: "Air laut selalu mengalir ke tempat yang lebih rendah, mengajarkan kerendahan hati. Semakin luas ilmu dan kekuasaan seseorang, semakin rendah hati ia seharusnya."
+        kelebihan: "Mudah mendapatkan rezeki, dihormati banyak orang, hubungan harmonis",
+        kekurangan: "Cenderung terlalu percaya diri dan mudah dimanfaatkan orang lain",
+        mitologi: "Wasesa Segara berasal dari kata 'Wasesa' (kekuasaan) dan 'Segara' (lautan).",
+        filosofi: "Air laut selalu mengalir ke tempat yang lebih rendah, mengajarkan kerendahan hati."
     },
     2: { 
         nama: "Tunggak Semi",
-        deskripsi: "✅ Pasangan ini adalah tipe pekerja keras dan pantang menyerah. Mereka memiliki semangat juang yang tinggi dalam meraih kesuksesan dan tidak pernah mudah putus asa menghadapi berbagai rintangan kehidupan.",
+        deskripsi: "✅ Pasangan ini adalah tipe pekerja keras dan pantang menyerah. Mereka memiliki semangat juang yang tinggi dalam meraih kesuksesan.",
         skor: 85,
-        solusi: "Jaga keseimbangan antara bekerja dan beristirahat. Luangkan waktu untuk keluarga dan jangan terlalu larut dalam kesibukan pekerjaan.",
+        solusi: "Jaga keseimbangan antara bekerja dan beristirahat. Luangkan waktu untuk keluarga.",
         karakter: "Ulet, pekerja keras, tangguh, pantang menyerah, dan ambisius",
-        kelebihan: "Rezeki berlimpah, karir cemerlang, mental baja, dan disiplin tinggi yang patut diteladani",
-        kekurangan: "Cenderung workaholic dan kurang memperhatikan kesehatan, sehingga rentan terhadap penyakit akibat kelelahan",
-        mitologi: "Tunggak Semi dalam bahasa Jawa berarti 'tumbuh kembali' atau 'pohon yang bertunas'. Konon, pasangan ini seperti pohon yang selalu mampu tumbuh kembali setelah ditebang - simbol ketahanan dan regenerasi.",
-        filosofi: "Kehidupan bagaikan musim - ada masa tanam, masa panen, dan masa istirahat. Filosofi Tunggak Semi mengajarkan bahwa kesuksesan sejati bukanlah tentang seberapa cepat kita mencapai tujuan, tetapi tentang kemampuan untuk bangkit kembali setiap kali kita jatuh."
+        kelebihan: "Rezeki berlimpah, karir cemerlang, mental baja, dan disiplin tinggi",
+        kekurangan: "Cenderung workaholic dan kurang memperhatikan kesehatan",
+        mitologi: "Tunggak Semi dalam bahasa Jawa berarti 'tumbuh kembali'.",
+        filosofi: "Kehidupan bagaikan musim - ada masa tanam, masa panen, dan masa istirahat."
     },
     3: { 
         nama: "Satriya Wibawa",
-        deskripsi: "✨ Pasangan ini ditakdirkan untuk mendapatkan kemuliaan dan keluhuran derajat. Mereka akan memiliki kedudukan yang tinggi dan dihormati oleh banyak orang. Nama baik mereka akan selalu terjaga dan menjadi teladan bagi masyarakat.",
+        deskripsi: "✨ Pasangan ini ditakdirkan untuk mendapatkan kemuliaan dan keluhuran derajat. Mereka akan memiliki kedudukan yang tinggi dan dihormati oleh banyak orang.",
         skor: 90,
-        solusi: "Gunakan kedudukan dan pengaruh yang dimiliki untuk membantu orang lain. Jadilah pemimpin yang melayani, bukan pemimpin yang dilayani.",
-        karakter: "Berwibawa, pemimpin alami, bijaksana, disegani, dan tegas dalam mengambil keputusan",
-        kelebihan: "Mudah mendapat kepercayaan orang, karir cemerlang, dihormati banyak orang, dan memiliki pengaruh yang luas",
-        kekurangan: "Cenderung otoriter dan kurang mendengarkan saran orang lain, terkadang terlalu percaya diri dengan pendapatnya sendiri",
-        mitologi: "Satriya Wibawa berarti 'kesatria yang berwibawa'. Dalam pewayangan, karakter ini sering dikaitkan dengan sosok Arjuna - kesatria yang sempurna dalam segala hal.",
-        filosofi: "Kewibawaan bukanlah tentang kekuasaan yang memaksa, tetapi tentang pengaruh yang menginspirasi. Seorang Satriya Wibawa memahami bahwa kekuatan sejati terletak pada kemampuan untuk membimbing dan melindungi, bukan untuk mendominasi."
+        solusi: "Gunakan kedudukan dan pengaruh yang dimiliki untuk membantu orang lain.",
+        karakter: "Berwibawa, pemimpin alami, bijaksana, disegani, dan tegas",
+        kelebihan: "Mudah mendapat kepercayaan orang, karir cemerlang, dihormati",
+        kekurangan: "Cenderung otoriter dan kurang mendengarkan saran orang lain",
+        mitologi: "Satriya Wibawa berarti 'kesatria yang berwibawa'.",
+        filosofi: "Kewibawaan bukanlah tentang kekuasaan yang memaksa, tetapi tentang pengaruh yang menginspirasi."
     },
     4: { 
         nama: "Sumur Sinobo",
-        deskripsi: "🏠 Rezeki pasangan ini bagaikan sumur yang tak pernah kering. Mereka akan selalu hidup dalam kecukupan dan kebahagiaan, tidak pernah kekurangan sandang, pangan, dan papan.",
+        deskripsi: "🏠 Rezeki pasangan ini bagaikan sumur yang tak pernah kering. Mereka akan selalu hidup dalam kecukupan dan kebahagiaan.",
         skor: 80,
-        solusi: "Syukuri setiap nikmat yang diberikan. Jangan lupa untuk berbagi dengan orang yang membutuhkan dan jangan pernah merasa cukup dengan apa yang dimiliki.",
-        karakter: "Dermawan, murah hati, bahagia, syukur, dan ramah terhadap siapapun",
-        kelebihan: "Rezeki berlimpah, banyak teman, hidup bahagia, dan dikelilingi oleh orang-orang baik yang tulus",
-        kekurangan: "Cenderung boros dan kurang pandai mengelola keuangan, sehingga perlu belajar untuk lebih bijak dalam berbelanja",
-        mitologi: "Sumur Sinobo dalam bahasa Jawa berarti 'sumur yang melimpah'. Konon, pasangan ini seperti sumur ajaib yang airnya tidak pernah habis meskipun terus diambil.",
-        filosofi: "Seperti sumur yang terus memberi tanpa pernah kehabisan, kita diajarkan bahwa kebahagiaan sejati datang dari memberi, bukan menerima. Semakin banyak kita berbagi, semakin banyak pula rezeki yang akan datang."
+        solusi: "Syukuri setiap nikmat yang diberikan. Jangan lupa untuk berbagi dengan orang yang membutuhkan.",
+        karakter: "Dermawan, murah hati, bahagia, syukur, dan ramah",
+        kelebihan: "Rezeki berlimpah, banyak teman, hidup bahagia, dan dikelilingi orang baik",
+        kekurangan: "Cenderung boros dan kurang pandai mengelola keuangan",
+        mitologi: "Sumur Sinobo dalam bahasa Jawa berarti 'sumur yang melimpah'.",
+        filosofi: "Seperti sumur yang terus memberi tanpa pernah kehabisan, kebahagiaan sejati datang dari memberi."
     },
     5: { 
         nama: "Satriya Wirang",
-        deskripsi: "⚠️ Pasangan ini sering kali mengalami kesusahan dan rintangan dalam kehidupan sosialnya. Mereka sering mendapat cobaan berupa fitnah, penghinaan, dan kesulitan dalam pergaulan masyarakat.",
+        deskripsi: "⚠️ Pasangan ini sering kali mengalami kesusahan dan rintangan dalam kehidupan sosialnya.",
         skor: 40,
-        solusi: "Perbanyak sedekah, rajin berdoa memohon restu orang tua, dan selalu introspeksi diri. Jangan mudah tersinggung dan selalu berpikir positif.",
-        karakter: "Pemberani, ulet, tetapi sering mendapat tantangan dan hambatan dalam hidup yang datang dari berbagai arah",
-        kelebihan: "Memiliki ketahanan mental yang kuat, tidak mudah menyerah, dan menjadi pribadi yang lebih tangguh",
-        kekurangan: "Cenderung mendapat musuh, sering difitnah, dan mengalami kesulitan sosial yang berkepanjangan",
-        mitologi: "Satriya Wirang berarti 'kesatria yang mendapat aib'. Dalam kisah pewayangan, ini mengingatkan pada tokoh yang harus melalui ujian berat sebelum mencapai kejayaannya.",
-        filosofi: "Wirang (aib) bukanlah akhir segalanya, melainkan awal dari kebijaksanaan. Dalam filosofi Jawa, setiap kekalahan adalah pelajaran, setiap aib adalah batu loncatan menuju kesempurnaan."
+        solusi: "Perbanyak sedekah, rajin berdoa memohon restu orang tua, dan selalu introspeksi diri.",
+        karakter: "Pemberani, ulet, tetapi sering mendapat tantangan dan hambatan dalam hidup",
+        kelebihan: "Memiliki ketahanan mental yang kuat dan tidak mudah menyerah",
+        kekurangan: "Cenderung mendapat musuh, sering difitnah, dan mengalami kesulitan sosial",
+        mitologi: "Satriya Wirang berarti 'kesatria yang mendapat aib'.",
+        filosofi: "Wirang (aib) bukanlah akhir segalanya, melainkan awal dari kebijaksanaan."
     },
     6: { 
         nama: "Bumi Kapetak",
-        deskripsi: "🌍 Pasangan ini memiliki kekuatan mental yang bagaikan bumi yang kokoh. Mereka adalah fondasi yang kuat bagi keluarga dan lingkungan sekitarnya. Orang-orang selalu merasa aman dan nyaman berada di dekat mereka.",
+        deskripsi: "🌍 Pasangan ini memiliki kekuatan mental yang bagaikan bumi yang kokoh.",
         skor: 75,
-        solusi: "Pertahankan kesabaran dan keteguhan hati. Jadilah fondasi yang kuat bagi keluarga dan jangan ragu untuk menunjukkan inisiatif dalam mengambil keputusan.",
-        karakter: "Sabar, tabah, kokoh, dapat diandalkan, dan memiliki mental yang kuat",
-        kelebihan: "Tahan banting, dapat menjadi sandaran bagi banyak orang, dan selalu tenang dalam menghadapi situasi apapun",
-        kekurangan: "Cenderung pasif dan kurang berinisiatif dalam mengambil keputusan, terlalu mengandalkan orang lain",
-        mitologi: "Bumi Kapetak berarti 'bumi yang telah digemburkan'. Konon, pasangan ini seperti tanah yang telah siap ditanami - mereka adalah fondasi yang kokoh bagi keluarga dan masyarakat.",
-        filosofi: "Bumi selalu diam, tetapi memiliki kekuatan yang luar biasa. Diam bukan berarti pasif, tetapi menunjukkan kebijaksanaan untuk memilih kapan harus bergerak dan kapan harus tetap teguh."
+        solusi: "Pertahankan kesabaran dan keteguhan hati. Jadilah fondasi yang kuat bagi keluarga.",
+        karakter: "Sabar, tabah, kokoh, dapat diandalkan, dan kuat mentalnya",
+        kelebihan: "Tahan banting, dapat menjadi sandaran, dan selalu tenang",
+        kekurangan: "Cenderung pasif dan kurang berinisiatif dalam mengambil keputusan",
+        mitologi: "Bumi Kapetak berarti 'bumi yang telah digemburkan'.",
+        filosofi: "Bumi selalu diam, tetapi memiliki kekuatan yang luar biasa."
     },
     7: { 
         nama: "Lebur Ketinggang",
-        deskripsi: "⚠️ Pasangan ini berpotensi sering mengalami cekcok dan pertengkaran. Konflik kecil dapat dengan mudah berkembang menjadi pertengkaran besar jika tidak segera diselesaikan dengan kepala dingin.",
+        deskripsi: "⚠️ Pasangan ini berpotensi sering mengalami cekcok dan pertengkaran.",
         skor: 30,
-        solusi: "Tingkatkan komunikasi intensif, selalu saling mengalah, dan jangan biarkan ego menguasai diri. Belajarlah untuk mendengarkan dan memahami pasangan.",
-        karakter: "Emosional, mudah tersulut, egois, dan keras kepala yang sulit untuk dikendalikan",
-        kelebihan: "Memiliki semangat yang besar jika sesuatu sesuai dengan keinginannya, mampu bekerja keras untuk mencapai tujuan",
-        kekurangan: "Sering bertengkar, usaha mudah hancur, hubungan tidak harmonis, dan sering menimbulkan penyesalan",
-        mitologi: "Lebur Ketinggang berarti 'hancur tergantung'. Dalam pewayangan, ini adalah peringatan tentang kekuatan ego yang dapat menghancurkan hubungan.",
-        filosofi: "Kehancuran sering kali datang bukan dari luar, tetapi dari dalam. Lebur Ketinggang mengajarkan bahwa pertengkaran kecil jika dibiarkan akan menjadi badai besar. Kunci kebahagiaan adalah mengendalikan ego dan saling memahami."
+        solusi: "Tingkatkan komunikasi intensif, selalu saling mengalah, dan jangan biarkan ego menguasai.",
+        karakter: "Emosional, mudah tersulut, egois, dan keras kepala",
+        kelebihan: "Memiliki semangat yang besar jika sesuatu sesuai dengan keinginannya",
+        kekurangan: "Sering bertengkar, usaha mudah hancur, dan hubungan tidak harmonis",
+        mitologi: "Lebur Ketinggang berarti 'hancur tergantung'.",
+        filosofi: "Kehancuran sering kali datang bukan dari luar, tetapi dari dalam."
     },
     8: { 
         nama: "Padu",
-        deskripsi: "🔥 Pasangan ini sering kali terlibat dalam pertengkaran hebat yang berpotensi memicu perpisahan. Perbedaan pendapat yang sepele sering berkembang menjadi konflik besar yang menguras energi dan perasaan.",
+        deskripsi: "🔥 Pasangan ini sering kali terlibat dalam pertengkaran hebat yang berpotensi memicu perpisahan.",
         skor: 25,
-        solusi: "Hindari konflik yang tidak perlu, pelajari teknik mengendalikan ego, dan jangan pernah membawa emosi saat berdiskusi. Berikan waktu untuk menenangkan diri sebelum menyelesaikan masalah.",
-        karakter: "Mudah marah, keras kepala, kurang sabar, dan sulit mengendalikan emosi yang meledak-ledak",
-        kelebihan: "Memiliki pendirian yang teguh, tidak mudah terpengaruh oleh orang lain, dan berani memperjuangkan pendapatnya",
-        kekurangan: "Sering konflik, rentan perceraian, emosi yang tidak stabil, dan hubungan yang selalu tegang",
-        mitologi: "Padu berarti 'bertemu dan berbenturan'. Dalam mitologi Jawa, ini adalah simbol dari dua kekuatan yang saling bertabrakan.",
-        filosofi: "Padu mengajarkan bahwa dalam setiap pertemuan ada potensi untuk berbenturan, tetapi juga ada potensi untuk menyatu. Kuncinya adalah menemukan titik keseimbangan antara mempertahankan prinsip dan mengakomodasi pasangan."
+        solusi: "Hindari konflik yang tidak perlu, pelajari teknik mengendalikan ego, dan jangan pernah membawa emosi saat berdiskusi.",
+        karakter: "Mudah marah, keras kepala, kurang sabar, dan sulit mengendalikan emosi",
+        kelebihan: "Memiliki pendirian yang teguh dan tidak mudah terpengaruh",
+        kekurangan: "Sering konflik, rentan perceraian, dan emosi yang tidak stabil",
+        mitologi: "Padu berarti 'bertemu dan berbenturan'.",
+        filosofi: "Padu mengajarkan bahwa dalam setiap pertemuan ada potensi untuk berbenturan."
     },
     9: { 
         nama: "Pegat",
-        deskripsi: "💔 Menurut tradisi primbon, PEGAT memiliki makna yang sangat buruk yaitu perceraian atau perpisahan yang berat. Pasangan ini akan menghadapi ujian yang sangat berat yang dapat memisahkan mereka.",
+        deskripsi: "💔 Menurut tradisi primbon, PEGAT memiliki makna yang sangat buruk yaitu perceraian atau perpisahan yang berat.",
         skor: 10,
-        solusi: "Sangat tidak disarankan untuk melanjutkan ke jenjang pernikahan. Jika tetap ingin melanjutkan, lakukan ritual ruwatan dan konsultasi dengan ahli spiritual untuk meminimalisir dampak buruk.",
-        karakter: "Cenderung saling bertolak belakang dan sulit menemukan titik temu dalam berbagai hal",
-        kelebihan: "Masing-masing memiliki kelebihan yang mungkin bisa saling melengkapi jika dikelola dengan baik",
-        kekurangan: "Sangat rentan terhadap perceraian, perpisahan, konflik berkepanjangan, dan penderitaan batin yang mendalam",
-        mitologi: "Pegat berarti 'terputus' atau 'patah'. Dalam cerita rakyat Jawa, ini adalah peringatan dari para leluhur tentang ketidakcocokan yang mendasar.",
-        filosofi: "Pegat mengajarkan bahwa tidak semua pertemuan adalah takdir. Terkadang, perpisahan adalah bentuk kebaikan yang tertinggi - karena dengan berpisah, kita memberi kesempatan pada diri sendiri dan orang lain untuk menemukan jodoh yang lebih sesuai."
+        solusi: "Sangat tidak disarankan untuk melanjutkan ke jenjang pernikahan. Jika tetap ingin melanjutkan, lakukan ritual ruwatan.",
+        karakter: "Cenderung saling bertolak belakang dan sulit menemukan titik temu",
+        kelebihan: "Masing-masing memiliki kelebihan yang mungkin bisa melengkapi",
+        kekurangan: "Sangat rentan terhadap perceraian, perpisahan, dan konflik berkepanjangan",
+        mitologi: "Pegat berarti 'terputus' atau 'patah'.",
+        filosofi: "Pegat mengajarkan bahwa tidak semua pertemuan adalah takdir."
     }
 };
 
 // ==================== PAKAR 2: BAPAK MOH. HAMIM, S.Pd ====================
 
-/**
- * Tabel Data Kesimpulan - PAKAR 2: Bapak Moh. Hamim, S.Pd
- * Metode: Sisa bagi dari total neptu / 3
- * Sisa 1 = Wasesa Segara (Begja - Beruntung)
- * Sisa 2 = Tunggak Semi (Lara - Cobaan)
- * Sisa 0 = Satriya Wibawa (Pati - Rintangan Berat)
- */
 const hasilRamalanHamim = {
     1: {
         nama: "Wasesa Segara (Begja - Beruntung)",
-        deskripsi: "🌊 Rumah tangga pasangan ini diramalkan akan dianugerahi keberuntungan yang melimpah, rezeki yang mengalir deras bagaikan air laut, dan kehidupan yang tenteram serta sejahtera. Pasangan ini akan merasakan kemudahan dalam segala urusan dan dikelilingi oleh berkah yang tak terduga. Kehidupan mereka akan dipenuhi dengan kebahagiaan dan kecukupan, sehingga mampu membangun rumah tangga yang harmonis dan penuh cinta kasih.",
+        deskripsi: "🌊 Rumah tangga pasangan ini diramalkan akan dianugerahi keberuntungan yang melimpah, rezeki yang mengalir deras bagaikan air laut, dan kehidupan yang tenteram serta sejahtera. Pasangan ini akan merasakan kemudahan dalam segala urusan dan dikelilingi oleh berkah yang tak terduga.",
         skor: 95,
-        solusi: "Syukuri setiap nikmat yang diberikan, jaga sikap rendah hati, dan jangan lupa untuk berbagi dengan sesama agar keberuntungan tetap abadi. Hindari sifat sombong dan lalai, karena kesombongan dapat menghilangkan berkah yang telah diberikan.",
+        solusi: "Syukuri setiap nikmat yang diberikan, jaga sikap rendah hati, dan jangan lupa untuk berbagi dengan sesama agar keberuntungan tetap abadi.",
         karakter: "Beruntung, sejahtera, tenteram, rendah hati, dermawan, dan penuh syukur",
         kelebihan: "Rezeki melimpah, kehidupan tenteram, mudah dalam segala urusan, dikelilingi berkah, dan hubungan harmonis",
-        kekurangan: "Cenderung lalai dalam bersyukur dan mudah terlena dengan kemudahan yang didapat, sehingga perlu selalu mengingat asal-usul nikmat",
+        kekurangan: "Cenderung lalai dalam bersyukur dan mudah terlena dengan kemudahan yang didapat",
         warna: "#22c55e",
         ikon: "🌊",
         detail: "Sisa 1 (Wasesa Segara / Begja / Beruntung)"
     },
     2: {
         nama: "Tunggak Semi (Lara - Cobaan)",
-        deskripsi: "🌱 Rumah tangga pasangan ini akan sering menghadapi berbagai cobaan dan ujian, terutama berupa kesulitan ekonomi yang datang silih berganti atau masalah kesehatan yang mengganggu ketentraman. Namun seperti tunas yang selalu tumbuh kembali, pasangan ini diajarkan untuk tetap tegar dan bangkit dari setiap keterpurukan. Cobaan yang datang bukanlah akhir dari segalanya, melainkan proses untuk mematangkan diri dan memperkuat ikatan batin.",
+        deskripsi: "🌱 Rumah tangga pasangan ini akan sering menghadapi berbagai cobaan dan ujian, terutama berupa kesulitan ekonomi yang datang silih berganti atau masalah kesehatan yang mengganggu ketentraman. Namun seperti tunas yang selalu tumbuh kembali, pasangan ini diajarkan untuk tetap tegar dan bangkit dari setiap keterpurukan.",
         skor: 60,
-        solusi: "Perbanyak sabar dan tawakal, jaga kesehatan dengan pola hidup yang baik, kelola keuangan dengan bijak, perbanyak doa memohon perlindungan, dan jangan pernah putus asa dalam menghadapi setiap ujian. Setiap cobaan pasti ada hikmah di baliknya.",
+        solusi: "Perbanyak sabar dan tawakal, jaga kesehatan dengan pola hidup yang baik, kelola keuangan dengan bijak, perbanyak doa memohon perlindungan, dan jangan pernah putus asa.",
         karakter: "Tangguh, ulet, sabar, tabah, pantang menyerah, dan memiliki ketahanan mental yang kuat",
-        kelebihan: "Memiliki ketahanan mental yang kuat, mampu bangkit dari keterpurukan, menjadi pribadi yang lebih bijaksana, dan hubungan semakin erat karena saling mendukung",
-        kekurangan: "Sering dilanda kesulitan ekonomi, gangguan kesehatan, ujian yang datang bertubi-tubi, dan perlu usaha ekstra untuk menjaga keharmonisan",
+        kelebihan: "Memiliki ketahanan mental yang kuat, mampu bangkit dari keterpurukan, menjadi pribadi yang lebih bijaksana",
+        kekurangan: "Sering dilanda kesulitan ekonomi, gangguan kesehatan, ujian yang datang bertubi-tubi",
         warna: "#f59e0b",
         ikon: "🌱",
         detail: "Sisa 2 (Tunggak Semi / Lara / Cobaan)"
     },
     0: {
         nama: "Satriya Wibawa (Pati - Rintangan Berat)",
-        deskripsi: "⚔️ Rumah tangga pasangan ini akan mengalami banyak rintangan dan halangan yang berat, penderitaan batin yang mendalam, serta cobaan yang menguji kesabaran. Bahkan tidak menutup kemungkinan akan terjadi perpisahan atau kehilangan yang menyakitkan. Namun seperti kesatria yang berwibawa, pasangan ini dituntut untuk tetap teguh menghadapi segala ujian dengan ketabahan hati. Rintangan yang berat ini mengajarkan bahwa kehidupan bukanlah selalu tentang kemudahan, tetapi juga tentang bagaimana kita menghadapi tantangan dengan kepala tegak.",
+        deskripsi: "⚔️ Rumah tangga pasangan ini akan mengalami banyak rintangan dan halangan yang berat, penderitaan batin yang mendalam, serta cobaan yang menguji kesabaran. Bahkan tidak menutup kemungkinan akan terjadi perpisahan atau kehilangan yang menyakitkan. Namun seperti kesatria yang berwibawa, pasangan ini dituntut untuk tetap teguh menghadapi segala ujian dengan ketabahan hati.",
         skor: 30,
-        solusi: "Perbanyak ibadah dan doa, konsultasikan masalah dengan orang tua dan ahli spiritual, jangan mengambil keputusan besar dalam keadaan emosi, persiapkan mental untuk menghadapi segala kemungkinan terburuk, dan jika memungkinkan lakukan ritual ruwatan untuk membersihkan energi negatif.",
-        karakter: "Teguh, tabah, berwibawa, tetapi sering dilanda penderitaan batin dan rintangan berat yang menguji kesabaran",
-        kelebihan: "Memiliki keteguhan hati yang luar biasa, mampu bertahan dalam situasi sulit, menjadi pribadi yang lebih dewasa dan bijaksana, serta memiliki wibawa yang muncul dari penderitaan yang dilalui",
-        kekurangan: "Rentan terhadap perpisahan, kehilangan, penderitaan batin, rintangan hidup yang berat, dan konflik berkepanjangan yang menguras energi",
+        solusi: "Perbanyak ibadah dan doa, konsultasikan masalah dengan orang tua dan ahli spiritual, jangan mengambil keputusan besar dalam keadaan emosi, persiapkan mental untuk menghadapi segala kemungkinan terburuk.",
+        karakter: "Teguh, tabah, berwibawa, tetapi sering dilanda penderitaan batin dan rintangan berat",
+        kelebihan: "Memiliki keteguhan hati yang luar biasa, mampu bertahan dalam situasi sulit, menjadi pribadi yang lebih dewasa dan bijaksana",
+        kekurangan: "Rentan terhadap perpisahan, kehilangan, penderitaan batin, rintangan hidup yang berat",
         warna: "#ef4444",
         ikon: "⚔️",
         detail: "Sisa 0 (Satriya Wibawa / Pati / Rintangan Berat)"
@@ -216,71 +186,71 @@ const glossaryData = [
     { term: "Pasaran", definition: "Siklus lima hari dalam kalender Jawa yaitu Legi, Pahing, Pon, Wage, dan Kliwon. Setiap pasaran memiliki nilai neptu yang berbeda." },
     { term: "Primbon", definition: "Kitab warisan leluhur Jawa yang berisi ramalan, perhitungan, dan petunjuk tentang berbagai aspek kehidupan termasuk pernikahan, karier, dan kesehatan." },
     { term: "Forward Chaining", definition: "Metode penalaran dari fakta menuju kesimpulan. Dalam sistem pakar, metode ini menggunakan data yang diketahui untuk mencari solusi yang tepat." },
-    { term: "Sisa Bagi 10", definition: "Hasil pembagian total neptu dengan angka 10. Digunakan dalam metode Pakar 1: Saiman. Sisa 0-9 menentukan hasil ramalan." },
-    { term: "Sisa Bagi 3", definition: "Hasil pembagian total neptu dengan angka 3. Digunakan dalam metode Pakar 2: Moh. Hamim. Sisa 0, 1, atau 2 menentukan hasil ramalan." },
+    { term: "Sisa Bagi 10", definition: "Hasil pembagian total neptu dengan angka 10. Digunakan dalam metode Pakar 1: Saiman." },
+    { term: "Sisa Bagi 3", definition: "Hasil pembagian total neptu dengan angka 3. Digunakan dalam metode Pakar 2: Moh. Hamim." },
+    { term: "Langgeng Sempurna", definition: "Ramalan terbaik yang berarti 'abadi dan sempurna'. Pasangan ini diprediksi memiliki hubungan yang langgeng hingga akhir hayat." },
     { term: "Wasesa Segara", definition: "Ramalan yang berarti 'berkuasa seperti lautan'. Pasangan dengan ramalan ini diprediksi akan memiliki wibawa, kekayaan, dan keberuntungan." },
     { term: "Tunggak Semi", definition: "Ramalan yang berarti 'tumbuh kembali'. Pasangan ini akan selalu bangkit dari keterpurukan dan memiliki semangat yang tak pernah padam." },
-    { term: "Satriya Wibawa", definition: "Ramalan yang berarti 'kesatria berwibawa'. Pasangan ini akan mendapatkan kemuliaan dan dihormati banyak orang, namun harus siap menghadapi rintangan." },
+    { term: "Satriya Wibawa", definition: "Ramalan yang berarti 'kesatria berwibawa'. Pasangan ini akan mendapatkan kemuliaan dan dihormati banyak orang." },
     { term: "Sumur Sinobo", definition: "Ramalan yang berarti 'sumur melimpah'. Pasangan ini akan memiliki rezeki yang berlimpah seperti air sumur yang tak pernah kering." },
-    { term: "Satriya Wirang", definition: "Ramalan yang berarti 'kesatria yang mendapat aib'. Pasangan ini akan menghadapi banyak cobaan dan tantangan dalam kehidupan sosial." },
-    { term: "Bumi Kapetak", definition: "Ramalan yang berarti 'bumi yang digemburkan'. Pasangan ini adalah fondasi yang kokoh dan dapat diandalkan oleh banyak orang." },
-    { term: "Lebur Ketinggang", definition: "Ramalan yang berarti 'hancur tergantung'. Pasangan ini harus berhati-hati karena berpotensi sering bertengkar dan mengalami konflik." },
-    { term: "Padu", definition: "Ramalan yang berarti 'bertemu dan berbenturan'. Pasangan ini akan sering berselisih dan rentan terhadap konflik yang berkepanjangan." },
-    { term: "Pegat", definition: "Ramalan yang berarti 'terputus' atau 'patah'. Ini adalah ramalan terburuk yang menandakan potensi perceraian atau perpisahan." },
-    { term: "Langgeng Sempurna", definition: "Ramalan terbaik yang berarti 'abadi dan sempurna'. Pasangan ini diprediksi memiliki hubungan yang langgeng hingga akhir hayat." }
+    { term: "Satriya Wirang", definition: "Ramalan yang berarti 'kesatria yang mendapat aib'. Pasangan ini akan menghadapi banyak cobaan dan tantangan." },
+    { term: "Bumi Kapetak", definition: "Ramalan yang berarti 'bumi yang digemburkan'. Pasangan ini adalah fondasi yang kokoh dan dapat diandalkan." },
+    { term: "Lebur Ketinggang", definition: "Ramalan yang berarti 'hancur tergantung'. Pasangan ini harus berhati-hati karena berpotensi sering bertengkar." },
+    { term: "Padu", definition: "Ramalan yang berarti 'bertemu dan berbenturan'. Pasangan ini akan sering berselisih dan rentan konflik." },
+    { term: "Pegat", definition: "Ramalan yang berarti 'terputus' atau 'patah'. Ini adalah ramalan terburuk yang menandakan potensi perceraian." }
 ];
 
 // ==================== MITOLOGI & FILOSOFI ====================
 const mythologyData = [
     {
         title: "Wasesa Segara - Kekuatan Lautan",
-        story: "Dalam mitologi Jawa, Wasesa Segara terinspirasi dari kisah Nyi Roro Kidul, penguasa Laut Selatan. Konon, pasangan dengan ramalan ini memiliki perlindungan dari kekuatan lautan. Mereka diyakini memiliki hubungan spiritual dengan air laut yang mengajarkan tentang kebijaksanaan dan kedalaman hati. Lautan yang luas dan dalam melambangkan kebijaksanaan yang tak terbatas dan kemampuan untuk menerima segala sesuatu dengan lapang dada.",
-        philosophy: "Lautan mengajarkan kita tentang kesabaran, kedalaman, dan kekuatan yang tak terlihat. Seperti ombak yang selalu datang dan pergi, kehidupan pasangan ini akan selalu penuh dengan pasang surut, namun mereka akan tetap teguh seperti karang di tepian. Air laut yang jernih mengajarkan tentang kejernihan hati dan pikiran."
+        story: "Dalam mitologi Jawa, Wasesa Segara terinspirasi dari kisah Nyi Roro Kidul, penguasa Laut Selatan. Konon, pasangan dengan ramalan ini memiliki perlindungan dari kekuatan lautan.",
+        philosophy: "Lautan mengajarkan kita tentang kesabaran, kedalaman, dan kekuatan yang tak terlihat."
     },
     {
         title: "Tunggak Semi - Tunas Kehidupan",
-        story: "Kisah Tunggak Semi berasal dari legenda pohon Dewandaru yang selalu tumbuh kembali meskipun ditebang. Konon, pasangan ini memiliki semangat hidup seperti pohon tersebut - tidak pernah padam dan selalu mencari jalan untuk bertahan. Tunas yang selalu tumbuh kembali melambangkan ketahanan dan kemampuan untuk bangkit dari keterpurukan.",
-        philosophy: "Hidup adalah tentang proses tumbuh dan berkembang. Setiap jatuh adalah kesempatan untuk bangkit kembali dengan lebih kuat. Tunggak Semi mengajarkan bahwa dalam setiap kegagalan, selalu ada benih keberhasilan yang siap bertunas. Kesabaran dan ketekunan adalah kunci untuk mencapai kesuksesan sejati."
+        story: "Kisah Tunggak Semi berasal dari legenda pohon Dewandaru yang selalu tumbuh kembali meskipun ditebang.",
+        philosophy: "Hidup adalah tentang proses tumbuh dan berkembang. Setiap jatuh adalah kesempatan untuk bangkit kembali."
     },
     {
         title: "Satriya Wibawa - Kesatria Sejati",
-        story: "Terinspirasi dari sosok Arjuna dalam pewayangan, Satriya Wibawa melambangkan kesatria yang sempurna. Konon, pasangan ini memiliki 'kesaktian' yang membuat mereka selalu berada di jalur kebenaran dan keadilan. Mereka adalah teladan bagi masyarakat dan selalu berjuang untuk menegakkan kebenaran meskipun harus menghadapi berbagai rintangan.",
-        philosophy: "Kewibawaan sejati bukanlah tentang seberapa banyak orang yang takut pada kita, tetapi tentang seberapa banyak orang yang terinspirasi oleh kita. Seorang Satriya Wibawa menggunakan kekuatannya untuk melindungi, bukan untuk menindas. Kemuliaan sejati datang dari pelayanan kepada sesama."
+        story: "Terinspirasi dari sosok Arjuna dalam pewayangan, Satriya Wibawa melambangkan kesatria yang sempurna.",
+        philosophy: "Kewibawaan sejati bukanlah tentang seberapa banyak orang yang takut pada kita, tetapi tentang seberapa banyak orang yang terinspirasi."
     },
     {
         title: "Sumur Sinobo - Sumber Kehidupan",
-        story: "Dalam cerita rakyat Jawa, Sumur Sinobo adalah sumur ajaib yang memberikan air tanpa henti. Konon, pasangan dengan ramalan ini memiliki 'sumur' rezeki yang tidak pernah kering - mereka selalu dikelilingi oleh keberuntungan dan berkah. Air yang tak pernah habis melambangkan rezeki yang terus mengalir dan keberkahan yang tak terbatas.",
-        philosophy: "Sumur Sinobo mengajarkan bahwa kebahagiaan sejati datang dari memberi, bukan menerima. Semakin banyak kita berbagi, semakin banyak pula yang akan kita terima. Ini adalah hukum alam yang tidak pernah berubah. Kebaikan yang kita tebar akan kembali kepada kita dalam bentuk yang lebih besar."
+        story: "Dalam cerita rakyat Jawa, Sumur Sinobo adalah sumur ajaib yang memberikan air tanpa henti.",
+        philosophy: "Sumur Sinobo mengajarkan bahwa kebahagiaan sejati datang dari memberi, bukan menerima."
     },
     {
         title: "Satriya Wirang - Ujian Kesatria",
-        story: "Satriya Wirang adalah kisah tentang kesatria yang harus melalui jalan terjal menuju kejayaan. Konon, setiap aib dan kekalahan yang dialami adalah bagian dari proses pembersihan diri yang akan membawa mereka pada kebijaksanaan sejati. Jalan yang terjal mengajarkan tentang ketabahan dan keteguhan hati.",
-        philosophy: "Wirang (aib) adalah guru terbaik. Melalui kegagalan dan penghinaan, kita belajar untuk menjadi lebih rendah hati dan bijaksana. Tidak ada kesuksesan yang lahir tanpa perjuangan. Setiap penderitaan yang dialami adalah batu loncatan menuju pencapaian yang lebih tinggi."
+        story: "Satriya Wirang adalah kisah tentang kesatria yang harus melalui jalan terjal menuju kejayaan.",
+        philosophy: "Wirang (aib) adalah guru terbaik. Melalui kegagalan dan penghinaan, kita belajar untuk menjadi lebih rendah hati."
     },
     {
         title: "Bumi Kapetak - Fondasi Kehidupan",
-        story: "Terinspirasi dari Dewi Pertiwi, Bumi Kapetak melambangkan kekuatan dan kesuburan. Konon, pasangan ini memiliki 'tanah' yang subur untuk menumbuhkan segala sesuatu - mulai dari cinta, keluarga, hingga karir. Bumi yang subur melambangkan potensi yang tak terbatas dan kemampuan untuk memberikan kehidupan.",
-        philosophy: "Seperti bumi yang selalu menerima dan memberi kehidupan, pasangan Bumi Kapetak adalah fondasi yang kokoh. Mereka mengajarkan bahwa kesabaran dan ketabahan adalah kunci untuk membangun sesuatu yang abadi. Fondasi yang kuat akan menopang bangunan yang tinggi."
+        story: "Terinspirasi dari Dewi Pertiwi, Bumi Kapetak melambangkan kekuatan dan kesuburan.",
+        philosophy: "Seperti bumi yang selalu menerima dan memberi kehidupan, pasangan Bumi Kapetak adalah fondasi yang kokoh."
     },
     {
         title: "Lebur Ketinggang - Peringatan Ego",
-        story: "Kisah ini mengingatkan pada pertempuran antara Rama dan Rahwana dalam Ramayana. Konon, Lebur Ketinggang adalah peringatan bahwa ego dan kesombongan akan menghancurkan apa pun yang kita bangun. Pertempuran antara kebaikan dan kejahatan mengajarkan tentang pentingnya mengendalikan hawa nafsu.",
-        philosophy: "Lebur Ketinggang mengajarkan bahwa dalam setiap hubungan, kita harus belajar untuk mengalah. Tidak ada kemenangan dalam pertengkaran - yang ada hanya kehancuran. Cinta sejati adalah tentang memberi, bukan tentang menang. Kerendahan hati adalah kunci kebahagiaan."
+        story: "Kisah ini mengingatkan pada pertempuran antara Rama dan Rahwana dalam Ramayana.",
+        philosophy: "Lebur Ketinggang mengajarkan bahwa dalam setiap hubungan, kita harus belajar untuk mengalah."
     },
     {
         title: "Padu - Pertemuan Dua Kekuatan",
-        story: "Padu terinspirasi dari kisah pertemuan dua kekuatan besar dalam mitologi Jawa - seperti pertemuan antara langit dan bumi. Konon, pasangan ini harus belajar untuk menemukan harmoni di antara perbedaan mereka. Pertemuan dua kekuatan yang berbeda dapat menciptakan keseimbangan yang sempurna.",
-        philosophy: "Perbedaan bukanlah kutukan, tetapi karunia. Padu mengajarkan bahwa dua orang yang berbeda dapat bersatu dengan indah jika mereka mau saling melengkapi dan memahami. Perbedaan adalah bumbu kehidupan yang membuat hubungan menjadi lebih berwarna dan bermakna."
+        story: "Padu terinspirasi dari kisah pertemuan dua kekuatan besar dalam mitologi Jawa.",
+        philosophy: "Perbedaan bukanlah kutukan, tetapi karunia. Padu mengajarkan bahwa dua orang yang berbeda dapat bersatu dengan indah."
     },
     {
         title: "Pegat - Perpisahan yang Bijaksana",
-        story: "Pegat adalah peringatan dari para leluhur tentang pentingnya menyadari ketidakcocokan. Dalam kisah pewayangan, terkadang perpisahan adalah langkah terbaik yang diambil oleh orang-orang bijaksana. Menyadari bahwa tidak semua pertemuan adalah takdir adalah bentuk kebijaksanaan tertinggi.",
-        philosophy: "Tidak semua pertemuan adalah takdir. Terkadang, berpisah adalah bentuk cinta tertinggi - karena kita memberi kebebasan kepada orang yang kita cintai untuk menemukan kebahagiaan sejatinya. Melepaskan dengan ikhlas adalah bentuk cinta yang paling tulus."
+        story: "Pegat adalah peringatan dari para leluhur tentang pentingnya menyadari ketidakcocokan.",
+        philosophy: "Tidak semua pertemuan adalah takdir. Terkadang, berpisah adalah bentuk cinta tertinggi."
     },
     {
         title: "Langgeng Sempurna - Cinta Sejati",
-        story: "Ini adalah ramalan paling langka dan paling diinginkan. Konon, pasangan dengan ramalan ini adalah 'jodoh sejatining ati' - dua jiwa yang diciptakan untuk satu sama lain sejak awal waktu. Mereka adalah pasangan yang sempurna, saling melengkapi dalam segala hal.",
-        philosophy: "Cinta sejati tidak pernah berakhir. Langgeng Sempurna mengajarkan bahwa cinta bukan tentang menemukan orang yang sempurna, tetapi tentang melihat ketidaksempurnaan seseorang dan tetap mencintainya sepenuh hati. Cinta sejati adalah tentang penerimaan dan pengertian yang tulus."
+        story: "Ini adalah ramalan paling langka dan paling diinginkan. Konon, pasangan dengan ramalan ini adalah 'jodoh sejatining ati'.",
+        philosophy: "Cinta sejati tidak pernah berakhir. Langgeng Sempurna mengajarkan bahwa cinta bukan tentang menemukan orang yang sempurna."
     }
 ];
 
@@ -288,57 +258,57 @@ const mythologyData = [
 const guideData = [
     {
         title: "Panduan Umum Membina Rumah Tangga",
-        content: "1. Selalu jaga komunikasi yang terbuka dan jujur\n2. Saling menghormati dan menghargai perbedaan\n3. Bangun kepercayaan melalui konsistensi dan kesetiaan\n4. Luangkan waktu berkualitas bersama secara rutin\n5. Hadapi masalah bersama dengan kepala dingin\n6. Jangan pernah membawa masalah tidur ke tempat tidur\n7. Selalu tanamkan rasa syukur atas kehadiran pasangan",
+        content: "1. Selalu jaga komunikasi yang terbuka dan jujur\n2. Saling menghormati dan menghargai perbedaan\n3. Bangun kepercayaan melalui konsistensi dan kesetiaan\n4. Luangkan waktu berkualitas bersama secara rutin\n5. Hadapi masalah bersama dengan kepala dingin",
         icon: "💑"
     },
     {
         title: "Tips untuk Pasangan Langgeng Sempurna",
-        content: "1. Jangan pernah bosan menunjukkan kasih sayang\n2. Teruslah bertumbuh bersama sebagai pasangan\n3. Jadikan setiap hari sebagai hari istimewa\n4. Jaga api cinta tetap menyala dengan kejutan-kejutan kecil\n5. Selalu bersyukur atas kehadiran pasangan\n6. Bangun mimpi dan tujuan bersama\n7. Jangan lupa untuk saling memaafkan",
+        content: "1. Jangan pernah bosan menunjukkan kasih sayang\n2. Teruslah bertumbuh bersama sebagai pasangan\n3. Jadikan setiap hari sebagai hari istimewa\n4. Jaga api cinta tetap menyala dengan kejutan-kejutan kecil\n5. Selalu bersyukur atas kehadiran pasangan",
         icon: "🏆"
     },
     {
         title: "Tips untuk Pasangan Wasesa Segara",
-        content: "1. Gunakan wibawa untuk membantu orang lain\n2. Jaga kerendahan hati meskipun telah sukses\n3. Jadilah teladan bagi keluarga dan masyarakat\n4. Seimbangkan kehidupan material dan spiritual\n5. Perkuat ikatan dengan doa bersama\n6. Jangan lupa bersedekah dan berbagi rezeki\n7. Hindari sifat sombong dan angkuh",
+        content: "1. Gunakan wibawa untuk membantu orang lain\n2. Jaga kerendahan hati meskipun telah sukses\n3. Jadilah teladan bagi keluarga dan masyarakat\n4. Seimbangkan kehidupan material dan spiritual\n5. Perkuat ikatan dengan doa bersama",
         icon: "👑"
     },
     {
         title: "Tips untuk Pasangan Tunggak Semi",
-        content: "1. Jaga keseimbangan antara kerja dan istirahat\n2. Prioritaskan keluarga di tengah kesibukan\n3. Bangun visi bersama untuk masa depan\n4. Dukung karir masing-masing tanpa mengorbankan waktu bersama\n5. Belajar untuk menikmati proses, bukan hanya hasil\n6. Jangan menyerah pada cobaan yang datang\n7. Perkuat ikatan spiritual dan doa bersama",
+        content: "1. Jaga keseimbangan antara kerja dan istirahat\n2. Prioritaskan keluarga di tengah kesibukan\n3. Bangun visi bersama untuk masa depan\n4. Dukung karir masing-masing tanpa mengorbankan waktu bersama\n5. Belajar untuk menikmati proses, bukan hanya hasil",
         icon: "🌱"
     },
     {
         title: "Tips untuk Pasangan Satriya Wibawa",
-        content: "1. Gunakan pengaruh untuk kebaikan banyak orang\n2. Dengarkan saran dan masukan dari pasangan\n3. Bagilah tanggung jawab dalam rumah tangga\n4. Jadilah pemimpin yang melayani, bukan mendominasi\n5. Tetap rendah hati di tengah kemuliaan\n6. Jangan lupa untuk selalu bermusyawarah\n7. Perkuat hubungan dengan keluarga besar",
+        content: "1. Gunakan pengaruh untuk kebaikan banyak orang\n2. Dengarkan saran dan masukan dari pasangan\n3. Bagilah tanggung jawab dalam rumah tangga\n4. Jadilah pemimpin yang melayani, bukan mendominasi\n5. Tetap rendah hati di tengah kemuliaan",
         icon: "⚔️"
     },
     {
         title: "Tips untuk Pasangan Sumur Sinobo",
-        content: "1. Kelola keuangan dengan bijak dan terencana\n2. Jangan lupa bersyukur dan berbagi dengan sesama\n3. Investasikan rezeki untuk masa depan yang cerah\n4. Bangun dana darurat untuk situasi tak terduga\n5. Hindari gaya hidup konsumtif yang berlebihan\n6. Buat perencanaan keuangan jangka panjang\n7. Belajar untuk hidup sederhana namun berkualitas",
+        content: "1. Kelola keuangan dengan bijak\n2. Jangan lupa bersyukur dan berbagi\n3. Investasikan rezeki untuk masa depan\n4. Bangun dana darurat untuk situasi tak terduga\n5. Hindari gaya hidup konsumtif yang berlebihan",
         icon: "🏠"
     },
     {
         title: "Tips untuk Pasangan Satriya Wirang",
-        content: "1. Perbanyak sedekah dan amal kebaikan\n2. Jaga hubungan baik dengan orang tua dan keluarga\n3. Perbanyak doa dan ibadah dengan khusyuk\n4. Hindari konflik yang tidak perlu dengan siapapun\n5. Fokus pada pengembangan diri dan karir\n6. Jangan mudah tersinggung dan selalu berpikir positif\n7. Perbanyak introspeksi diri dan perbaiki kekurangan",
+        content: "1. Perbanyak sedekah dan amal kebaikan\n2. Jaga hubungan baik dengan orang tua\n3. Perbanyak doa dan ibadah\n4. Hindari konflik yang tidak perlu\n5. Fokus pada pengembangan diri dan karir",
         icon: "🛡️"
     },
     {
         title: "Tips untuk Pasangan Bumi Kapetak",
-        content: "1. Jangan terlalu pasif, ambil inisiatif dalam berbagai hal\n2. Berani mengambil keputusan bersama dengan mantap\n3. Kembangkan keberanian dalam menghadapi tantangan\n4. Jangan takut untuk memulai sesuatu yang baru\n5. Bersikaplah lebih spontan dan menyenangkan\n6. Keluar dari zona nyaman untuk bertumbuh\n7. Belajar untuk lebih ekspresif dalam mengungkapkan perasaan",
+        content: "1. Jangan terlalu pasif, ambil inisiatif\n2. Berani mengambil keputusan bersama\n3. Kembangkan keberanian dalam menghadapi tantangan\n4. Jangan takut untuk memulai sesuatu yang baru\n5. Bersikaplah lebih spontan dan menyenangkan",
         icon: "🌍"
     },
     {
         title: "Tips untuk Pasangan Lebur Ketinggang",
-        content: "1. Pelajari teknik komunikasi yang baik dan efektif\n2. Kurangi ego dan belajar untuk saling mengalah\n3. Jangan memperbesar masalah kecil yang sepele\n4. Segera selesaikan konflik tanpa ditunda-tunda\n5. Cari bantuan konseling jika diperlukan\n6. Belajar mendengarkan dengan hati, bukan dengan ego\n7. Buat aturan main yang disepakati bersama",
+        content: "1. Pelajari teknik komunikasi yang baik\n2. Kurangi ego dan belajar mengalah\n3. Jangan memperbesar masalah kecil\n4. Segera selesaikan konflik tanpa ditunda\n5. Cari bantuan konseling jika diperlukan",
         icon: "⚠️"
     },
     {
         title: "Tips untuk Pasangan Padu",
-        content: "1. Hindari kata-kata yang menyakitkan dan kasar\n2. Belajar mengendalikan emosi dengan bijak\n3. Beri waktu untuk menenangkan diri sebelum berdiskusi\n4. Jangan berdebat di depan anak-anak\n5. Cari titik tengah dalam setiap perbedaan pendapat\n6. Fokus pada solusi, bukan pada siapa yang salah\n7. Belajar untuk memaafkan dan melupakan kesalahan",
+        content: "1. Hindari kata-kata yang menyakitkan\n2. Belajar mengendalikan emosi\n3. Beri waktu untuk menenangkan diri\n4. Jangan berdebat di depan anak\n5. Cari titik tengah dalam setiap perbedaan",
         icon: "🔥"
     },
     {
         title: "Tips untuk Pasangan Pegat",
-        content: "1. Pertimbangkan kembali dengan sangat matang\n2. Konsultasi dengan orang tua dan ahli spiritual\n3. Lakukan ritual ruwatan jika memungkinkan\n4. Siapkan mental untuk segala kemungkinan terburuk\n5. Jangan memaksakan diri jika sudah tidak cocok\n6. Prioritaskan kebahagiaan masing-masing\n7. Jika terpaksa berpisah, lakukan dengan baik-baik",
+        content: "1. Pertimbangkan kembali dengan matang\n2. Konsultasi dengan orang tua dan ahli\n3. Lakukan ritual ruwatan jika memungkinkan\n4. Siapkan mental untuk segala kemungkinan\n5. Jangan memaksakan diri jika sudah tidak cocok",
         icon: "💔"
     }
 ];
@@ -351,28 +321,20 @@ function hitungTotalNeptu(hariPria, pasaranPria, hariWanita, pasaranWanita) {
     return { neptuPria, neptuWanita, total: neptuPria + neptuWanita };
 }
 
-// PAKAR 1: Metode Sisa Bagi 10
 function hitungSisaBagi10(totalNeptu) {
     return totalNeptu > 10 ? totalNeptu % 10 : totalNeptu;
 }
 
 function getKesimpulanSaiman(sisa) {
-    if (hasilRamalanSaiman[sisa]) {
-        return hasilRamalanSaiman[sisa];
-    }
-    return hasilRamalanSaiman[0];
+    return hasilRamalanSaiman[sisa] || hasilRamalanSaiman[0];
 }
 
-// PAKAR 2: Metode Sisa Bagi 3 (Moh. Hamim)
 function hitungSisaBagi3(totalNeptu) {
     return totalNeptu % 3;
 }
 
 function getKesimpulanHamim(sisa) {
-    if (hasilRamalanHamim[sisa]) {
-        return hasilRamalanHamim[sisa];
-    }
-    return hasilRamalanHamim[1];
+    return hasilRamalanHamim[sisa] || hasilRamalanHamim[1];
 }
 
 function cekPantanganKhusus(neptuPria, neptuWanita) {
@@ -452,7 +414,6 @@ function transferKeWanita() {
 // ==================== TAB NAVIGATION ====================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Tab navigation
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
     
@@ -468,7 +429,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Load initial data
     cariWeton();
     hitungKecocokanPakar1();
     hitungKecocokanPakar2();
@@ -536,7 +496,7 @@ function loadGuide() {
     container.innerHTML = html;
 }
 
-// ==================== FUNGSI PAKAR 1: BAPAK SAIMAN ====================
+// ==================== FUNGSI PAKAR 1 ====================
 
 function hitungKecocokanPakar1() {
     const priaHari = document.getElementById('pria-hari').value;
@@ -679,7 +639,7 @@ function tampilkanHasilPakar1(data) {
     hasilDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== FUNGSI PAKAR 2: BAPAK MOH. HAMIM, S.Pd ====================
+// ==================== FUNGSI PAKAR 2 ====================
 
 function hitungKecocokanPakar2() {
     const priaHari = document.getElementById('hamim-pria-hari').value;
