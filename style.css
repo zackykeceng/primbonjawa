@@ -278,20 +278,18 @@ select {
     width: 100%;
     padding: 18px;
     border-radius: var(--radius-md);
-    background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
-    color: #0a0f1d;
     font-size: 1.1rem;
     font-weight: 800;
     border: none;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(217, 119, 6, 0.3);
     transition: var(--transition);
     letter-spacing: 0.5px;
+    color: #ffffff;
 }
 
 .btn-primary-match:hover {
-    box-shadow: 0 15px 35px rgba(217, 119, 6, 0.5);
     transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 /* WETON DISPLAY */
@@ -479,6 +477,7 @@ td {
     padding: 36px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    margin-bottom: 24px;
 }
 
 .hasil-weton-info {
